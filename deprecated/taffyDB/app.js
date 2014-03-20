@@ -1,8 +1,34 @@
     
-    
+    var cities = TAFFY();
+
+    window.onload = function() {
+
+        var city;
+        var uploadButton = document.getElementById('upload');
+        var displayButton = document.getElementById('display');
+
+
+        uploadButton.addEventListener('click', addCity, false);
+        displayButton.addEventListener('click', displayCity, false);
+
+
+        function addCity() {
+            city = document.getElementById('newCity').value;
+            cities.insert( {name:city} )
+        }
+
+        function displayCity() {
+            alert(cities( {name:city} ).first().name);
+        }
+
+
+    }
+
+    /*
 	// Create the database by instantiating a new TAFFY object.
     var cities = TAFFY();
     
+
     //Populate the database with records
     cities.insert( {name:"New York", state:"NY"} );
     cities.insert( {name:"Portland", state:"OR"} );
@@ -22,3 +48,4 @@
 
     // Output the chosen records population
     alert(test.population);
+    */
