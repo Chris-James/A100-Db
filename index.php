@@ -1,6 +1,6 @@
 <html lang="en">
 <head>
-	<title>A100 Apprentice Database</title>
+	<title>A100 Database Application</title>
 
 </head>
 
@@ -16,18 +16,20 @@
 
 
 
-	/* CONTROLLERS */
+	/* CONFIGURATION */
 
 		//Database
-			ActiveRecord\Config::initialize(function($cfg) {
+ 			ActiveRecord\Config::initialize(function($cfg) {
 				$cfg->set_model_directory('models');
-				$cfg->set_connections(array('development' => 'sqlite://a100'));
+				$cfg->set_connections(array('development' => 'mysql://julioa1:plswork@a100.juliomb.com/a100database'));
  			});
 
 		//View Directory
 			option('views_dir', dirname(__FILE__). 'views');
 
 		//Routes
+			dispatch('/','index');
+			dispatch('/create','createRecord');
 			dispatch('/add', 'add');
 			dispatch('/view', 'view');
 			dispatch('/show','show');
@@ -38,14 +40,19 @@
 
 	/* FUNCTIONS */
 
+		//Index
+			function index() {
+				return html('index.html');
+			}
+
+		//Create Form
+			function createRecord() {
+				return html('create.html');
+			}
+
 		//Add Record to Database
 			function add() {
-				Student::create(array('studentName'=>'Max', 'java'=>'3', 'python'=>'1', 'html'=>'0'));
-			}
-		
-		//View Front-End
-			function view() {
-				return html('index.html');
+				Student::create(array('name'=>'Max'));
 			}
 
 		//Show Record
@@ -55,18 +62,17 @@
 				$student = Student::first();
 
 				#Assign Properties to Variables
-				$studentName = $student->studentname;
-				$studentId = $student->studentid;
+				$studentName = $student->name;
+				$studentCohort = $student->cohort;
 
 				#Output Information
-				echo "Student Name: $studentName".'<br />'."Student ID: $studentId";
+				echo "Student Name: $studentName".'<br />'."Student Cohort: $studentCohort";
 			}
 
 			function delete() {
-				$student = Student::first();
+				$student = Student::last();
 				$student->delete();
 			}
-
 
 	run();
 ?>
