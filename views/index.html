@@ -7,18 +7,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>A100 Database Application</title>
 
-	<link href="assets/css/bootstrap.css" rel="stylesheet">
-	<link href="assets/css/bootstrap-flat.css" rel="stylesheet">
-	<link href="assets/css/bootstrap-flat-extras.css" rel="stylesheet">
-	<link href="assets/css/main.css" rel="stylesheet">
+	<link href="views/assets/css/bootstrap.css" rel="stylesheet">
+	<link href="views/assets/css/bootstrap-flat.css" rel="stylesheet">
+	<link href="views/assets/css/bootstrap-flat-extras.css" rel="stylesheet">
+	<link href="views/assets/css/main.css" rel="stylesheet">
 </head>
 
 <body>
-	<div class="container-fluid">
+	<div class="container">
 
 		<div class="row topMarginBig">
-			<div class="col-xs-10 col-xs-offset-1">
-				<img src="assets/img/imgIndieLogo.png">
+			<div class="col-xs-12">
+				<img src="views/assets/img/imgIndieLogo.png">
 			</div>
 		</div>
 
@@ -27,8 +27,8 @@
 		</div>
 		
 		<div class="row">
-			<div class="col-xs-3 col-xs-offset-1">
-				<select class="form-control">
+			<div class="col-xs-3">
+				<select class="form-control input-sm">
   					<option>Independent Software</option>
   					<option>Fix-It-Up</option>
   					<option>DataLingo</option>
@@ -36,18 +36,18 @@
 				</select>
 			</div>
 
-			<div class="col-xs-3">
-				<button type="button" class="btn btn-primary">View by Apprentice</button>
+			<div class="col-xs-2">
+				<button type="button" class="btn btn-primary btn-sm">View by Apprentice</button>
 			</div>
 			
-			<div class="col-xs-3 col-xs-offset-2">
-				<button type="button" class="btn btn-info">Add Record</button>
-				<button type="button" class="btn btn-info">Remove Record</button>
+			<div class="col-xs-3 col-xs-offset-4">
+				<a href="/add"><button type="button" class="btn btn-sm btn-info">Add Student</button></a>
+				<!-- <button type="button" class="btn btn-info">Remove Record</button> -->
 			</div>
 		</div>
 
 		<div class="row">
-			<div class="col-xs-10 col-xs-offset-1 topMargin">
+			<div class="col-xs-12 topMargin">
 
 				<table class="table table-bordered">
 					<thead>
@@ -118,7 +118,7 @@
 			</div>
 		</div>
 
-		<div class="row" style="margin-top: 100px;">
+		<div class="row topMarginBig">
 			<div class="col-xs-5 col-xs-offset-1">
 				<textarea class="form-control" rows="3"></textarea>
 			</div>

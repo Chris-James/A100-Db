@@ -6,28 +6,50 @@
 
 <?php
 	
-	/* IMPORTS */
+	## IMPORTS  __________________________________________________________________
 
-		//Limonade Micro Framework
-		require_once 'library/limonade.php';
+		# A. Limonade
+		  #  A PHP micro framework.
+		  #  Facilitates the use of MVC structure.
+		  #  @link https://github.com/sofadesign/limonade
 
-		//PHP Active Record
-		require_once 'library/php-activerecord/ActiveRecord.php';
+			require_once 'library/limonade.php';
+
+		# B. php-activerecord
+		  #	 A PHP implementation of the Active Record ORM.
+		  #  Simplifies interactions with the database.
+		  #  @link http://www.phpactiverecord.org
+
+			require_once 'library/php-activerecord/ActiveRecord.php';
+
+		# C. h2o
+		  #  PHP template engine inspired by Django, Smarty, Jinja style engines.
+		  #  @link http://www.h2o-template.org
+
+			require 'library/h2o/h2o.php';
 
 
 
-	/* CONFIGURATION */
+	## CONFIGURATIONS  ___________________________________________________________
 
-		//Database
+		# A. Database
+		  #  set_model_directory ...
+		  #  set_connections method initializes connection to database.
+		  #  ... => 'database-type://username:password@database-address/database-name'
+
  			ActiveRecord\Config::initialize(function($cfg) {
 				$cfg->set_model_directory('models');
 				$cfg->set_connections(array('development' => 'mysql://julioa1:plswork@a100.juliomb.com/a100database'));
  			});
 
-		//View Directory
+		# B. Views Directory
+ 		  #  Tells app to look for HTML files in the directory named 'views'
+ 		  # UNNECESSARY??
 			option('views_dir', dirname(__FILE__). 'views');
 
-		//Routes
+		# C. Routes
+		  #  ...
+
 			dispatch_get('/','index');
 			
 			dispatch_get('/add','createStudent');
@@ -40,19 +62,24 @@
 
 
 
-	/* FUNCTIONS */
+	## FUNCTIONS  ________________________________________________________________
 
-		//Index
+		# A. Index
+			
 			function index() {
-				return html('index.html');
+				$index = new h2o('views/index.html');
+
+				echo $index->render();
 			}
 
-		// Student Form
+		# B. Student Form
+
 			function createStudent() {
 				return html('studentForm.html');
 			}
 
-		// Add Student to Database
+		# C. Add Student to Database
+
 			Function createTest() {
 				Student::create(array(	'name'		=>$_POST['inputName'],
 										'cohort'	=>$_POST['inputCohort'],
@@ -88,12 +115,16 @@
 				#Retrieve Record from Database
 				$student = Student::first();
 
-				#Assign Properties to Variables
-				$studentName = $student->name;
-				$studentCohort = $student->cohort;
+				#Assign Properties to An Array
+				$info = array(
+					'name' => $student->name,
+					'cohort' => $student->cohort
+				);
 
-				#Output Information
-				echo "Student Name: $studentName".'<br />'."Student Cohort: $studentCohort";
+				#Output Information via h2o
+				$output = new h2o('views/templateTest.html');
+				echo $output->render(compact('info'));
+
 			}
 
 		// Test Delete
