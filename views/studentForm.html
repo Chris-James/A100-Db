@@ -17,7 +17,7 @@
 <div class="container">
 <div class="col-xs-8 col-xs-offset-2">
     
-<form class="form-horizontal">
+<form class="form-horizontal" method="POST">
 <fieldset>
 
 <!-- Form Name -->
@@ -103,22 +103,23 @@
 <div class="form-group">
   <label class="col-md-5 control-label" for="inputUnixLinux">Unix/Linux</label>
   <div class="col-md-5"> 
+  
     <label class="radio-inline" for="inputUnixLinux-0">
-      <input type="radio" name="inputUnixLinux" id="inputUnixLinux-0" value="0" checked="checked">
-      0
+      <input type="radio" name="inputUnixLinux" id="inputUnixLinux-0" value="0" checked="checked"> 0
     </label> 
+    
     <label class="radio-inline" for="inputUnixLinux-1">
-      <input type="radio" name="inputUnixLinux" id="inputUnixLinux-1" value="1">
-      1
+      <input type="radio" name="inputUnixLinux" id="inputUnixLinux-1" value="1"> 1
     </label> 
+    
     <label class="radio-inline" for="inputUnixLinux-2">
-      <input type="radio" name="inputUnixLinux" id="inputUnixLinux-2" value="2">
-      2
+      <input type="radio" name="inputUnixLinux" id="inputUnixLinux-2" value="2"> 2
     </label> 
+    
     <label class="radio-inline" for="inputUnixLinux-3">
-      <input type="radio" name="inputUnixLinux" id="inputUnixLinux-3" value="3">
-      3
+      <input type="radio" name="inputUnixLinux" id="inputUnixLinux-3" value="3"> 3
     </label>
+  
   </div>
 </div>
 
@@ -423,16 +424,16 @@
 
 <!-- Multiple Radios (inline) -->
 <div class="form-group">
-  <label class="col-md-5 control-label" for="inptSVN">SVN</label>
+  <label class="col-md-5 control-label" for="inputSVN">SVN</label>
   <div class="col-md-5"> 
-    <label class="radio-inline" for="inptSVN-0">
-      <input type="radio" name="inptSVN" id="inptSVN-0" value="0" checked="checked"> 0 </label> 
-    <label class="radio-inline" for="inptSVN-1">
-      <input type="radio" name="inptSVN" id="inptSVN-1" value="1"> 1 </label> 
-    <label class="radio-inline" for="inptSVN-2">
-      <input type="radio" name="inptSVN" id="inptSVN-2" value="2"> 2 </label> 
-    <label class="radio-inline" for="inptSVN-3">
-      <input type="radio" name="inptSVN" id="inptSVN-3" value="3"> 3 </label>
+    <label class="radio-inline" for="inputSVN-0">
+      <input type="radio" name="inputSVN" id="inputSVN-0" value="0" checked="checked"> 0 </label> 
+    <label class="radio-inline" for="inputSVN-1">
+      <input type="radio" name="inputSVN" id="inputSVN-1" value="1"> 1 </label> 
+    <label class="radio-inline" for="inputSVN-2">
+      <input type="radio" name="inputSVN" id="inptSVN-2" value="2"> 2 </label> 
+    <label class="radio-inline" for="inputSVN-3">
+      <input type="radio" name="inputSVN" id="inputSVN-3" value="3"> 3 </label>
   </div>
 </div>
 
@@ -440,7 +441,7 @@
 <div class="form-group">
   <label class="col-md-5 control-label" for="inputComments">Comments</label>
   <div class="col-md-5">                     
-    <textarea class="form-control" id="inputComments" name="inputComments">Additional Comments...</textarea>
+    <textarea class="form-control" id="inputComments" name="inputComments" placeholder="Additional Comments..."></textarea>
   </div>
 </div>
 

@@ -28,12 +28,14 @@
 			option('views_dir', dirname(__FILE__). 'views');
 
 		//Routes
-			dispatch('/','index');
-			dispatch('/create','createRecord');
-			dispatch('/add', 'add');
-			dispatch('/view', 'view');
-			dispatch('/show','show');
-			dispatch('/delete','delete');
+			dispatch_get('/','index');
+			
+			dispatch_get('/add','createStudent');
+			dispatch_post('/add', 'addStudent');
+			
+			dispatch_get('/view', 'view');
+			dispatch_get('/show','show');
+			dispatch_get('/delete','delete');
 
 
 
@@ -45,17 +47,42 @@
 				return html('index.html');
 			}
 
-		//Create Form
-			function createRecord() {
-				return html('create.html');
+		// Student Form
+			function createStudent() {
+				return html('studentForm.html');
 			}
 
-		//Add Record to Database
-			function add() {
-				Student::create(array('name'=>'Max'));
+		// Add Student to Database
+			Function createTest() {
+				Student::create(array(	'name'		=>$_POST['inputName'],
+										'cohort'	=>$_POST['inputCohort'],
+										'address'	=>$_POST['inputAddress'],
+										'city'		=>$_POST['inputCity'],
+										'telephone'	=>$_POST['inputTelephone'],
+										'school'	=>$_POST['inputSchool'],
+										'education'	=>$_POST['inputEducation'],
+										'visa'		=>$_POST['inputVisa'],
+										'veteran'	=>$_POST['inputVeteran'],
+										'unixlinux'	=>$_POST['inputUnixLinux'],
+										'sql'		=>$_POST['inputSql'],
+										'git'		=>$_POST['inputGit'],
+										'wordpress'	=>$_POST['inputWordpress'],
+										'drupal'	=>$_POST['inputDrupal'],
+										'python'	=>$_POST['inputPython'],
+										'svn'		=>$_POST['inputSVN'],
+										'objectivec'=>$_POST['inputObjectiveC'],
+										'rubyrails'	=>$_POST['inputRuby'],
+										'c++'		=>$_POST['inputCPlusPlus'],
+										'.net'		=>$_POST['inputNet'],
+										'php'		=>$_POST['inputPHP'],
+										'htmlcss'	=>$_POST['inputHtmlCss'],
+										'java'		=>$_POST['inputJava'],
+										'javascript'=>$_POST['inputJavascript'],
+										'comments'	=>$_POST['comments'])
+				);
 			}
 
-		//Show Record
+		//Test Show
 			function show() {
 
 				#Retrieve Record from Database
@@ -69,6 +96,7 @@
 				echo "Student Name: $studentName".'<br />'."Student Cohort: $studentCohort";
 			}
 
+		// Test Delete
 			function delete() {
 				$student = Student::last();
 				$student->delete();

@@ -4,6 +4,7 @@ class Student extends ActiveRecord\Model {
 
 	public static $table_name = "students";
 	public static $primary_key = "id";
+	
 	public static $name = "name";
 	public static $cohort = "cohort";
 	public static $address = "address";
