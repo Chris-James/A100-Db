@@ -27,57 +27,64 @@
 		</div>
 		
 		<div class="row">
-			<div class="col-xs-3">
-				<select class="form-control input-sm">
-  					<option>Independent Software</option>
-  					<option>Fix-It-Up</option>
-  					<option>DataLingo</option>
-  					<option>Atrix</option>
-				</select>
+			
+			<div class="col-xs-6">
+				<form class="form-inline" role="form" method="POST">
+  					<div class="form-group">
+						<select class="form-control input-sm" name="inputCompany">
+							{% for partner in partnerMenu %}
+							<option value="{{partner.name}}" {% if partner.name == currentPartner.name %} selected {% endif %}>{{partner.name}}</option>
+							{% endfor %}
+						</select>
+					</div>
+  					<button type="submit" class="btn btn-sm btn-default">View Company</button>
+				</form>
 			</div>
 
-			<div class="col-xs-2">
-				<button type="button" class="btn btn-primary btn-sm">View by Apprentice</button>
+			<div class="col-xs-3 col-xs-offset-3">
+				<a href="/add"><button type="button" class="btn btn-sm btn-info">Add Apprentice</button></a>
 			</div>
-			
-			<div class="col-xs-3 col-xs-offset-4">
-				<a href="/add"><button type="button" class="btn btn-sm btn-info">Add Student</button></a>
-				<!-- <button type="button" class="btn btn-info">Remove Record</button> -->
-			</div>
+
 		</div>
 
 		<div class="row">
+			
 			<div class="col-xs-12 topMargin">
-
 				<table class="table table-bordered">
 					<thead>
 						<tr >
 							<th colspan="3"></th>
-							<th>PHP</th>
-							<th>HTML/CSS</th>
-							<th>Drupal</th>
-							<th>Javascript</th>
-							<th>SVN</th>
-							<th></th>
+							{% for skill,value in skillsArray %}
+							<th>{{skill}}</th>
+							{% endfor %}
 						</tr>
 					</thead>
-				
 					<tbody>
-
-						{% for student in studentArray %}
+						{% for apprentice in apprenticeArray %}
 						<tr class="centered">
-							<td>{{student.name}}</td>
-							<td>{{student.cohort}}</td>
-							<td>{{student.address}}</td>
-							<td>{{student.php}}</td>
-							<td>{{student.htmlcss}}</td>
-							<td>{{student.drupal}}</td>
-							<td>{{student.javascript}}</td>
-							<td>{{student.svn}}</td>
-							<td><span class="label label-success">Interested</span></td>
+							<td>{{apprentice.name}}</td>
+							<td>{{apprentice.cohort}}</td>
+							<td>{{apprentice.address}}</td>
+							{% for skill,value in skillsArray %}
+								{% if skill == 'Unix/Linux' %} 	<td> {{apprentice.unix_linux}} </td>	{% endif %}
+								{% if skill == 'SQL' %} 		<td> {{apprentice.sql}} </td>			{% endif %}
+								{% if skill == 'Git' %} 		<td> {{apprentice.git}} </td>			{% endif %}
+								{% if skill == 'WordPress' %} 	<td> {{apprentice.wordpress}} </td>	{% endif %}
+								{% if skill == 'Drupal' %} 		<td> {{apprentice.drupal}} </td>		{% endif %}
+								{% if skill == 'Python' %} 		<td> {{apprentice.python}} </td>		{% endif %}
+								{% if skill == 'SVN' %} 		<td> {{apprentice.svn}} </td>			{% endif %}
+								{% if skill == 'Objective-C' %} <td> {{apprentice.objective_c}} </td>	{% endif %}
+								{% if skill == 'Ruby/Rails' %} 	<td> {{apprentice.ruby_rails}} </td>	{% endif %}
+								{% if skill == 'C++' %} 		<td> {{apprentice.c_plusplus}} </td>	{% endif %}
+								{% if skill == '.Net' %} 		<td> {{apprentice.dot_net}} </td>		{% endif %}
+								{% if skill == 'PHP' %} 		<td> {{apprentice.php}} </td>			{% endif %}
+								{% if skill == 'HTML/CSS' %}	<td> {{apprentice.html_css}}</td>		{% endif %}
+								{% if skill == 'Java' %} 		<td> {{apprentice.java}}</td>			{% endif %}
+								{% if skill == 'Javascript' %} 	<td> {{apprentice.javascript}}</td>	{% endif %}
+							{% endfor %}
+							<!--<td><span class="label label-success">Interested</span></td> -->
 						</tr>
 						{% endfor %}
-
 					</tbody>
 				</table>
 

@@ -1,19 +1,18 @@
 <?php
 
-class Student extends ActiveRecord\Model {
+class Employer extends ActiveRecord\Model {
 
-	public static $table_name = "students";
-	public static $primary_key = "id";
-	
+	#============#
+	# DEPRECATED #
+	#============#
+
+	public static $table_name = "employers";
+	public static $primary_key = "name";
+
 	public static $name = "name";
-	public static $cohort = "cohort";
 	public static $address = "address";
 	public static $city = "city";
 	public static $telephone = "telephone";
-	public static $school = "school";
-	public static $education = "education";
-	public static $visa = "visa";
-	public static $veteran = "veteran";
 	
 	//Skillset
 	public static $unixLinux = "unixlinux";
@@ -35,7 +34,3 @@ class Student extends ActiveRecord\Model {
 	public static $comments = "comments";
 
 }
-
-
-
-?>
