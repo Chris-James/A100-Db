@@ -3,7 +3,9 @@
 <html>
   <head><title></title></head>
   <body>
-  	{{ info.name }}
-    {{ info.cohort }}
+  	{% for student in studentArray %}
+  		{{ student.name }} {{ student.cohort }}
+  		<br />
+	{% endfor %}
   </body>
 </html>

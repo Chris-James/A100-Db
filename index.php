@@ -67,9 +67,10 @@
 		# A. Index
 			
 			function index() {
+				$studentArray = Student::all();
 				$index = new h2o('views/index.html');
 
-				echo $index->render();
+				echo $index->render(compact('studentArray'));
 			}
 
 		# B. Student Form
@@ -80,50 +81,46 @@
 
 		# C. Add Student to Database
 
-			Function createTest() {
-				Student::create(array(	'name'		=>$_POST['inputName'],
-										'cohort'	=>$_POST['inputCohort'],
-										'address'	=>$_POST['inputAddress'],
-										'city'		=>$_POST['inputCity'],
-										'telephone'	=>$_POST['inputTelephone'],
-										'school'	=>$_POST['inputSchool'],
-										'education'	=>$_POST['inputEducation'],
-										'visa'		=>$_POST['inputVisa'],
-										'veteran'	=>$_POST['inputVeteran'],
-										'unixlinux'	=>$_POST['inputUnixLinux'],
-										'sql'		=>$_POST['inputSql'],
-										'git'		=>$_POST['inputGit'],
-										'wordpress'	=>$_POST['inputWordpress'],
-										'drupal'	=>$_POST['inputDrupal'],
-										'python'	=>$_POST['inputPython'],
-										'svn'		=>$_POST['inputSVN'],
-										'objectivec'=>$_POST['inputObjectiveC'],
-										'rubyrails'	=>$_POST['inputRuby'],
-										'c++'		=>$_POST['inputCPlusPlus'],
-										'.net'		=>$_POST['inputNet'],
-										'php'		=>$_POST['inputPHP'],
-										'htmlcss'	=>$_POST['inputHtmlCss'],
-										'java'		=>$_POST['inputJava'],
-										'javascript'=>$_POST['inputJavascript'],
-										'comments'	=>$_POST['comments'])
+			function addStudent() {
+				Student::create(array(	'name'		=>	$_POST['inputName'],
+										'cohort'	=>	$_POST['inputCohort'],
+										'address'	=>	$_POST['inputAddress'],
+										'city'		=>	$_POST['inputCity'],
+										'telephone'	=>	$_POST['inputTelephone'],
+										'school'	=>	$_POST['inputSchool'],
+										'education'	=>	$_POST['inputEducation'],
+										'visa'		=>	$_POST['inputVisa'],
+										'veteran'	=>	$_POST['inputVeteran'],
+										'unixlinux'	=>	$_POST['inputUnixLinux'],
+										'sql'		=>	$_POST['inputSql'],
+										'git'		=>	$_POST['inputGit'],
+										'wordpress'	=>	$_POST['inputWordpress'],
+										'drupal'	=>	$_POST['inputDrupal'],
+										'python'	=>	$_POST['inputPython'],
+										'svn'		=>	$_POST['inputSVN'],
+										'objectivec'=>	$_POST['inputObjectiveC'],
+										'rubyrails'	=>	$_POST['inputRuby'],
+										'c++'		=>	$_POST['inputCPlusPlus'],
+										'.net'		=>	$_POST['inputNet'],
+										'php'		=>	$_POST['inputPHP'],
+										'htmlcss'	=>	$_POST['inputHtmlCss'],
+										'java'		=>	$_POST['inputJava'],
+										'javascript'=>	$_POST['inputJavascript'],
+										'comments'	=>	$_POST['comments'])
 				);
 			}
 
 		//Test Show
 			function show() {
 
-				#Retrieve Record from Database
-				$student = Student::first();
+				# Retrieve all student records from Database.
+				# Save all records in an array.
 
-				#Assign Properties to An Array
-				$info = array(
-					'name' => $student->name,
-					'cohort' => $student->cohort
-				);
+				$studentArray = Student::all();
 
 				#Output Information via h2o
 				$output = new h2o('views/templateTest.html');
-				echo $output->render(compact('info'));
+				echo $output->render(compact('studentArray'));
 
 			}
 

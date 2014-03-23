@@ -54,8 +54,8 @@
 						<tr >
 							<th colspan="3"></th>
 							<th>PHP</th>
-							<th>HTML</th>
-							<th>CSS</th>
+							<th>HTML/CSS</th>
+							<th>Drupal</th>
 							<th>Javascript</th>
 							<th>SVN</th>
 							<th></th>
@@ -64,53 +64,19 @@
 				
 					<tbody>
 
-						<tr>
-							<td>Adam Smith</td>
-							<td>#00231</td>
-							<td>Winter 2014</td>
-							<td>5</td>
-							<td>4</td>
-							<td>3</td>
-							<td>4</td>
-							<td>2</td>
-							<td><span class="label label-success">Interested</span></td>
-						</tr>
-
+						{% for student in studentArray %}
 						<tr class="centered">
-							<td>Julie Johns</td>
-							<td>#00203</td>
-							<td>Winter 2014</td>
-							<td>2</td>
-							<td>4</td>
-							<td class="success">5</td>
-							<td>3</td>
-							<td>3</td>
+							<td>{{student.name}}</td>
+							<td>{{student.cohort}}</td>
+							<td>{{student.address}}</td>
+							<td>{{student.php}}</td>
+							<td>{{student.htmlcss}}</td>
+							<td>{{student.drupal}}</td>
+							<td>{{student.javascript}}</td>
+							<td>{{student.svn}}</td>
 							<td><span class="label label-success">Interested</span></td>
 						</tr>
-
-						<tr class="centered">
-							<td>Jamie Adams</td>
-							<td>#00213</td>
-							<td>Winter 2014</td>
-							<td>1</td>
-							<td>1</td>
-							<td>3</td>
-							<td>2</td>
-							<td class="success">5</td>
-							<td><span class="label label-success">Interested</span></td>
-						</tr>
-
-						<tr>
-							<td>Jason Lopez</td>
-							<td>#00197</td>
-							<td>Winter 2014</td>
-							<td>4</td>
-							<td class="success">5</td>
-							<td>3</td>
-							<td>2</td>
-							<td>2</td>
-							<td><span class="label label-danger">Not Interested</span></td>
-						</tr>
+						{% endfor %}
 
 					</tbody>
 				</table>
@@ -119,7 +85,7 @@
 		</div>
 
 		<div class="row topMarginBig">
-			<div class="col-xs-5 col-xs-offset-1">
+			<div class="col-xs-5 col-xs-offset-1 bottomMargin">
 				<textarea class="form-control" rows="3"></textarea>
 			</div>
 		</div>
