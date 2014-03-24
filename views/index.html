@@ -52,11 +52,12 @@
 			<div class="col-xs-12 topMargin">
 				<table class="table table-bordered">
 					<thead>
-						<tr >
+						<tr>
 							<th colspan="3"></th>
 							{% for skill,value in skillsArray %}
 							<th>{{skill}}</th>
 							{% endfor %}
+							<th></th>
 						</tr>
 					</thead>
 					<tbody>
@@ -69,7 +70,7 @@
 								{% if skill == 'Unix/Linux' %} 	<td> {{apprentice.unix_linux}} </td>	{% endif %}
 								{% if skill == 'SQL' %} 		<td> {{apprentice.sql}} </td>			{% endif %}
 								{% if skill == 'Git' %} 		<td> {{apprentice.git}} </td>			{% endif %}
-								{% if skill == 'WordPress' %} 	<td> {{apprentice.wordpress}} </td>	{% endif %}
+								{% if skill == 'WordPress' %} 	<td> {{apprentice.wordpress}} </td>		{% endif %}
 								{% if skill == 'Drupal' %} 		<td> {{apprentice.drupal}} </td>		{% endif %}
 								{% if skill == 'Python' %} 		<td> {{apprentice.python}} </td>		{% endif %}
 								{% if skill == 'SVN' %} 		<td> {{apprentice.svn}} </td>			{% endif %}
@@ -80,9 +81,19 @@
 								{% if skill == 'PHP' %} 		<td> {{apprentice.php}} </td>			{% endif %}
 								{% if skill == 'HTML/CSS' %}	<td> {{apprentice.html_css}}</td>		{% endif %}
 								{% if skill == 'Java' %} 		<td> {{apprentice.java}}</td>			{% endif %}
-								{% if skill == 'Javascript' %} 	<td> {{apprentice.javascript}}</td>	{% endif %}
+								{% if skill == 'Javascript' %} 	<td> {{apprentice.javascript}}</td>		{% endif %}
 							{% endfor %}
-							<!--<td><span class="label label-success">Interested</span></td> -->
+							<td>
+							{% if currentPartner.name == apprentice.interest1 %}
+							<span class="label label-success">Interested</span></td>
+							{% endif %}
+							{% if currentPartner.name == apprentice.interest2 %}
+							<span class="label label-success">Interested</span></td>
+							{% endif %}
+							{% if currentPartner.name == apprentice.interest3 %}
+							<span class="label label-success">Interested</span>
+							{% endif %}
+							</td>
 						</tr>
 						{% endfor %}
 					</tbody>

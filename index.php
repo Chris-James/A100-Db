@@ -85,7 +85,10 @@
 				
 				# @param apprenticeArray is an array of all Apprentice records database.
 				$apprenticeArray = Apprentice::all();
+				//$interestArray = getInterests($apprenticeArray);
 
+				//$test = new h2o('views/test.html');
+				//echo $test->render(compact('interestArray'));
 				$index = new h2o('views/index.html');
 				echo $index->render(compact('partnerMenu','currentPartner','skillsArray','apprenticeArray'));
 			}
@@ -166,6 +169,14 @@
 				
 				return $skills;
 			}
+
+			/*function getInterests($apprenticeArray) {
+					$interests = array();
+					foreach($apprenticeArray as $apprentice) {
+						$interests[$apprentice->name] = array($apprentice->interest1, $apprentice->interest2, $apprentice->interest3);
+					}
+					return $interests;
+				}*/
 
 	run();
 ?>
