@@ -9,3 +9,15 @@
 .bottomMargin {
 	margin-bottom: 25px;
 }
+
+.navbar-blue {
+	background: #006496;
+}
+
+.alignRight {
+	text-align: right;
+}
+
+.alignLeft {
+	text-align: left;
+}

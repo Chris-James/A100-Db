@@ -1,0 +1,126 @@
+{% extends 'base.html' %}
+
+	{% block content %}
+
+		<div class="row">
+			<div class="col-xs-12 topMargin"></div>
+		</div>
+		
+		<div class="row">
+			
+			<div class="col-xs-6">
+				<form class="form-inline" role="form" method="POST">
+  					<div class="form-group">
+						<select class="form-control input-md" name="inputCompany">
+							{% for partner in partnerMenu %}
+							<option value="{{partner.name}}" {% if partner.name == currentPartner.name %} selected {% endif %}>{{partner.name}}</option>
+							{% endfor %}
+						</select>
+					</div>
+  					<button type="submit" class="btn btn-sm btn-normal">View Company</button>
+				</form>
+			</div>
+
+			<div class="col-xs-6 alignRight">
+				<a href="/addApprentice"><button type="button" class="btn btn-sm btn-default">Add Apprentice</button></a>
+				<a href="/addCompany"><button type="button" class="btn btn-sm btn-default">Add Partner Company</button></a>
+			</div>
+
+		</div>
+
+		<div class="row">
+			
+			<div class="col-xs-12">
+				<table class="table table-bordered table-condensed">
+					<thead>
+						<tr>
+							<th colspan="3"><a href="/company/{{currentPartner.name}}">{{currentPartner.name}}</a></th>
+							{% for skill,value in skillsArray %}
+							<th>{{skill}}</th>
+							{% endfor %}
+							<th></th>
+						</tr>
+					</thead>
+					<tbody>
+						{% for apprentice in apprenticeArray %}
+							<tr class="centered">
+							<td>
+							{% if currentPartner.name == apprentice.interest1 %}
+							<span class="label label-success"> </span></td>
+							{% endif %}
+							{% if currentPartner.name == apprentice.interest2 %}
+							<span class="label label-success"> </span></td>
+							{% endif %}
+							{% if currentPartner.name == apprentice.interest3 %}
+							<span class="label label-success"> </span></td>
+							{% endif %}
+							</td>
+							<td><a href="/apprentice/{{apprentice.name}}"><small>{{apprentice.name}}<small></a></td>
+							<td><small>{{apprentice.city}}</small></td>
+							{% for skill,value in skillsArray %}
+								{% if skill == 'Unix/Linux' %}
+									<td {% if apprentice.unix_linux == 3 %} class="info" {% endif %} > {{apprentice.unix_linux}} </td>
+								{% endif %}
+								{% if skill == 'SQL' %}
+									<td {% if apprentice.sql == 3 %} class="info" {% endif %} > {{apprentice.sql}} </td>
+								{% endif %}
+								{% if skill == 'Git' %}
+									<td {% if apprentice.git == 3 %} class="info" {% endif %} > {{apprentice.git}} </td>
+								{% endif %}
+								{% if skill == 'WordPress' %}
+									<td {% if apprentice.wordpress == 3 %} class="info" {% endif %} > {{apprentice.wordpress}} </td>
+								{% endif %}
+								{% if skill == 'Drupal' %}
+									<td {% if apprentice.drupal == 3 %} class="info" {% endif %} > {{apprentice.drupal}} </td>
+								{% endif %}
+								{% if skill == 'Python' %} 	
+									<td {% if apprentice.python == 3 %} class="info" {% endif %} > {{apprentice.python}} </td>
+								{% endif %}
+								{% if skill == 'SVN' %} 	
+									<td {% if apprentice.svn == 3 %} class="info" {% endif %} > {{apprentice.svn}} </td>
+								{% endif %}
+								{% if skill == 'Objective-C' %}
+									<td {% if apprentice.objective_c == 3 %} class="info" {% endif %} > {{apprentice.objective_c}} </td>
+								{% endif %}
+								{% if skill == 'Ruby/Rails' %}
+									<td {% if apprentice.ruby_rails == 3 %} class="info" {% endif %} > {{apprentice.ruby_rails}} </td>
+								{% endif %}
+								{% if skill == 'C++' %}
+									<td {% if apprentice.c_plusplus == 3 %} class="info" {% endif %} > {{apprentice.c_plusplus}} </td>
+								{% endif %}
+								{% if skill == '.Net' %} 		
+									<td {% if apprentice.dot_net == 3 %} class="info" {% endif %} > {{apprentice.dot_net}} </td>	
+								{% endif %}
+								{% if skill == 'PHP' %} 		
+									<td {% if apprentice.php == 3 %} class="info" {% endif %} > {{apprentice.php}} </td>		
+								{% endif %}
+								{% if skill == 'HTML/CSS' %}	
+									<td {% if apprentice.html_css == 3 %} class="info" {% endif %} > {{apprentice.html_css}}</td>	
+								{% endif %}
+								{% if skill == 'Java' %} 		
+									<td {% if apprentice.java == 3 %} class="info" {% endif %} > {{apprentice.java}}</td>		
+								{% endif %}
+								{% if skill == 'Javascript' %} 	
+									<td {% if apprentice.javascript == 3 %} class="info" {% endif %} > {{apprentice.javascript}}</td>	
+								{% endif %}
+							{% endfor %}
+							<td><small>{{apprentice.comments | limitwords}}</small></td>
+							</tr>
+						{% endfor %}
+					</tbody>
+				</table>
+
+			</div>
+		</div>
+
+		<div class="row topMarginBig">
+			<div class="col-xs-6 bottomMargin">
+			<!--	<textarea class="form-control" rows="3" placeholder="{{ currentPartner.comments }}" disabled></textarea> -->
+			<table class="table table-bordered">
+			<tbody>
+			<tr><td>{{ currentPartner.comments | limitwords }}</td></tr>
+			</tbody>
+			</div>
+		</div>
+	
+	{% endblock %}

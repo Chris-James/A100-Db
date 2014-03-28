@@ -1,0 +1,16 @@
+{% extends 'table.html' %}
+
+
+	{%block interest%}
+		
+		{% if currentPartner.name == apprentice.interest1 %}
+			class="success"
+		{% endif %}
+		{% if currentPartner.name == apprentice.interest2 %}
+			class="success"
+		{% endif %}
+		{% if currentPartner.name == apprentice.interest3 %}
+			class="success"
+		{% endif %}
+
+	{% endblock %}

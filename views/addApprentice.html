@@ -1,22 +1,8 @@
-<!DOCTYPE html>
+{% extends 'base.html' %}
 
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>A100 Database Application</title>
+  {% block content %}
 
-  <link href="views/assets/css/bootstrap.css" rel="stylesheet">
-  <link href="views/assets/css/bootflat.css" rel="stylesheet">
-  <!--<link href="views/assets/css/bootstrap-flat.css" rel="stylesheet">
-  <link href="views/assets/css/bootstrap-flat-extras.css" rel="stylesheet"> -->
-  <link href="views/assets/css/main.css" rel="stylesheet">
-</head>
-
-<body>
-<div class="container">
-  <div class="col-xs-8 col-xs-offset-2">
+<div class="col-xs-8 col-xs-offset-2">
     
 <form class="form-horizontal" method="POST">
   <fieldset>
@@ -37,7 +23,7 @@
     
       <label class="col-md-5 control-label" for="inputCohort">Cohort</label>  
         <div class="col-md-5 bottomMargin">
-          <input id="inputCohort" name="inputCohort" type="text" placeholder="Winter 2014" class="form-control input-md" required="">  
+          <input id="inputCohort" name="inputCohort" type="text" placeholder="Winter 2014" class="form-control input-md">  
         </div>
     
     </div>
@@ -46,7 +32,7 @@
     <div class="form-group">
       <label class="col-md-5 control-label" for="inputAddress">Address</label>  
         <div class="col-md-5 bottomMargin">
-          <input id="inputAddress" name="inputAddress" type="text" placeholder="15 Lombard Street" class="form-control input-md" required="">
+          <input id="inputAddress" name="inputAddress" type="text" placeholder="15 Lombard Street" class="form-control input-md">
         </div>
     </div>
 
@@ -54,7 +40,7 @@
     <div class="form-group">
       <label class="col-md-5 control-label" for="inputCity">City</label>  
         <div class="col-md-5 bottomMargin">
-          <input id="inputCity" name="inputCity" type="text" placeholder="New Haven" class="form-control input-md" required="">
+          <input id="inputCity" name="inputCity" type="text" placeholder="New Haven" class="form-control input-md">
         </div>  
     </div>
 
@@ -62,7 +48,15 @@
     <div class="form-group">
       <label class="col-md-5 control-label" for="inputTelephone">Telephone</label>  
         <div class="col-md-5 bottomMargin">
-          <input id="inputTelephone" name="inputTelephone" type="text" placeholder="2035555785" class="form-control input-md" required="">
+          <input id="inputTelephone" name="inputTelephone" type="text" placeholder="2035555785" class="form-control input-md">
+        </div>
+    </div>
+
+  <!-- Email input-->
+    <div class="form-group">
+      <label class="col-md-5 control-label" for="inputEmail">Email</label>  
+        <div class="col-md-5 bottomMargin">
+          <input id="inputEmail" name="inputEmail" type="text" placeholder="name@email.com" class="form-control input-md">
         </div>
     </div>
 
@@ -74,11 +68,19 @@
         </div>
     </div>
 
-  <!-- Education input-->
+  <!-- Graduation input-->
     <div class="form-group">
-      <label class="col-md-5 control-label" for="inputEducation">Education</label>  
+      <label class="col-md-5 control-label" for="inputGraduation">Graduation Date</label>  
       <div class="col-md-5 bottomMargin">
-        <input id="inputEducation" name="inputEducation" type="text" placeholder="Junior" class="form-control input-md">
+        <input id="inputGraduation" name="inputGraduation" type="text" placeholder="May 2015" class="form-control input-md">
+      </div>
+    </div>
+
+  <!-- Work Experience input-->
+    <div class="form-group">
+      <label class="col-md-5 control-label" for="inputWorkExperience">Years Work Experience</label>
+      <div class="col-md-5 bottomMargin">
+        <input id="inputWorkExperience" name="inputWorkExperience" type="text" placeholder="1.5" class="form-control input-md">
       </div>
     </div>
 
@@ -461,8 +463,5 @@
 </form>
 
   </div> <!-- end ROW -->
-</div><!-- end Container -->
 
-</body>
-
-</html>
+{% endblock %}
