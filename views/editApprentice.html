@@ -10,6 +10,19 @@
   <!-- Form Name -->
     <legend><h4>Edit Apprentice</h4></legend>
 
+<!-- Multiple Radios -->
+<div class="control-group">
+  <label class=" col-xs-5 control-label" for="updateDelete"></label>
+  <div class="controls col-xs-5 bottomMargin">
+    <label class="radio-inline" for="updateDelete">
+      <input type="radio" name="updateDelete" id="updateDelete" value="update" checked="checked"><p class="text-success">Update Record</p>
+    </label>
+    <label class="radio-inline" for="updateDelete">
+      <input type="radio" name="updateDelete" id="updateDelete" value="delete"><p class="text-danger">Delete Record</p>
+    </label>
+  </div>
+</div>
+
   <!-- Name input-->
     <div class="form-group">
       <label class="col-xs-5 control-label" for="inputName">Apprentice Name</label>  
@@ -384,20 +397,16 @@
   <label class="col-md-5 control-label" for="inputWordpress">WordPress</label>
   <div class="col-md-5"> 
     <label class="radio-inline" for="inputWordpress-0">
-      <input type="radio" name="inputWordpress" id="inputWordpress-0" value="0" {% if apprentice.wordpress=="0" %}checked="checked" {% endif %}>
-      0
+      <input type="radio" name="inputWordpress" id="inputWordpress-0" value="0" {% if apprentice.wordpress=="0" %}checked="checked" {% endif %}> 0
     </label> 
     <label class="radio-inline" for="inputWordpress-1">
-      <input type="radio" name="inputWordpress" id="inputWordpress-1" value="1" {% if apprentice.wordpress=="1" %}checked="checked" {% endif %}>
-      1
+      <input type="radio" name="inputWordpress" id="inputWordpress-1" value="1" {% if apprentice.wordpress=="1" %}checked="checked" {% endif %}> 1
     </label> 
     <label class="radio-inline" for="inputWordpress-2">
-      <input type="radio" name="inputWordpress" id="inputWordpress-2" value="2" {% if apprentice.wordpress=="2" %}checked="checked" {% endif %}>
-      2
+      <input type="radio" name="inputWordpress" id="inputWordpress-2" value="2" {% if apprentice.wordpress=="2" %}checked="checked" {% endif %}> 2
     </label> 
     <label class="radio-inline" for="inputWordpress-3">
-      <input type="radio" name="inputWordpress" id="inputWordpress-3" value="3" {% if apprentice.wordpress=="3" %}checked="checked" {% endif %}>
-      3
+      <input type="radio" name="inputWordpress" id="inputWordpress-3" value="3" {% if apprentice.wordpress=="3" %}checked="checked" {% endif %}> 3
     </label>
   </div>
 </div>
@@ -408,12 +417,10 @@
   
   <div class="col-md-5"> 
     <label class="radio-inline" for="inputGit-0">
-      <input type="radio" name="inputGit" id="inputGit-0" value="0" {% if apprentice.git=="0" %}checked="checked" {% endif %}>
-      0
+      <input type="radio" name="inputGit" id="inputGit-0" value="0" {% if apprentice.git=="0" %}checked="checked" {% endif %}> 0
     </label> 
     <label class="radio-inline" for="inputGit-1">
-      <input type="radio" name="inputGit" id="inputGit-1" value="1" {% if apprentice.git=="1" %}checked="checked" {% endif %}>
-      1
+      <input type="radio" name="inputGit" id="inputGit-1" value="1" {% if apprentice.git=="1" %}checked="checked" {% endif %}> 1
     </label> 
     <label class="radio-inline" for="inputGit-2">
       <input type="radio" name="inputGit" id="inputGit-2" value="2" {% if apprentice.git=="2" %}checked="checked" {% endif %}> 2
@@ -430,10 +437,11 @@
     <label class="col-md-5 control-label" for="inputSVN">SVN</label>
       <div class="col-md-5 bottomMargin"> 
         <label class="radio-inline" for="inputSVN-0">
-          <input type="radio" name="inputSVN" id="inputSVN-0" value="0" {% if apprentice.svn=="0" %}checked="checked" {% endif %}> 0 </label> 
+          <input type="radio" name="inputSVN" id="inputSVN-0" value="0" {% if apprentice.svn=="0" %}checked="checked" {% endif %}> 0
+        </label> 
         <label class="radio-inline" for="inputSVN-1">
           <input type="radio" name="inputSVN" id="inputSVN-1" value="1" {% if apprentice.svn=="1" %}checked="checked" {% endif %}> 1
-        </label> 
+        </label>
         <label class="radio-inline" for="inputSVN-2">
           <input type="radio" name="inputSVN" id="inptSVN-2" value="2" {% if apprentice.svn=="2" %}checked="checked" {% endif %}> 2
         </label> 
@@ -453,9 +461,9 @@
 
 <!-- Submit Button -->
   <div class="form-group">
-    <label class="col-md-5 control-label" for="submitButton"></label>
-    <div class="col-md-5">
-      <button id="submitButton" name="submitButton" class="btn btn-sm btn-normal">Update</button>
+    <label class="col-xs-5 control-label" for="submitButton"></label>
+    <div class="col-xs-2">
+      <button id="submitButton" name="submitButton" class="btn btn-sm btn-primary">Submit</button>
     </div>
   </div>
 
