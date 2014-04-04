@@ -163,38 +163,38 @@
 				function editApprentice() {
 					if ($_POST['updateDelete'] == 'update') {
 						$apprentice = Apprentice::find_by_name($_POST['inputName']);
-						$apprentice->update_attributes(array('name'			  =>	$_POST['inputName'],
-															 'cohort'		  =>	$_POST['inputCohort'],
-															 'address'		  =>	$_POST['inputAddress'],
-															 'city'			  =>	$_POST['inputCity'],
-															 'telephone'	  =>	$_POST['inputTelephone'],
-															 'school'		  =>	$_POST['inputSchool'],
-															 'graduation'	  =>	$_POST['inputGraduation'],
-															 'workexperience' =>	$_POST['inputWorkExperience'],
-															 'visa'			  =>	$_POST['inputVisa'],
-															 'veteran'		  =>	$_POST['inputVeteran'],
-															 'unix_linux'	  =>	$_POST['inputUnixLinux'],
-															 'sql'			  =>	$_POST['inputSql'],
-															 'git'			  =>	$_POST['inputGit'],
-															 'wordpress'	  =>	$_POST['inputWordpress'],
-															 'drupal'		  =>	$_POST['inputDrupal'],
-															 'python'		  =>	$_POST['inputPython'],
-															 'svn'			  =>	$_POST['inputSVN'],
-															 'objective_c'	  =>	$_POST['inputObjectiveC'],
-															 'ruby_rails'	  =>	$_POST['inputRuby'],
-															 'c_plusplus'	  =>	$_POST['inputCPlusPlus'],
-															 'dot_net'		  =>	$_POST['inputNet'],
-															 'php'			  =>	$_POST['inputPHP'],
-															 'html_css'		  =>	$_POST['inputHtmlCss'],
-															 'java'			  =>	$_POST['inputJava'],
-															 'javascript'	  =>	$_POST['inputJavascript'],
-															 'comments'		  =>	$_POST['inputComments'],
-															 'email'		  =>	$_POST['inputEmail'])
+						$apprentice->update_attributes(array('name'			  => $_POST['inputName'],
+															 'cohort'		  => $_POST['inputCohort'],
+															 'address'		  => $_POST['inputAddress'],
+															 'city'			  => $_POST['inputCity'],
+															 'telephone'	  => $_POST['inputTelephone'],
+															 'school'		  => $_POST['inputSchool'],
+															 'graduation'	  => $_POST['inputGraduation'],
+															 'workexperience' => $_POST['inputWorkExperience'],
+															 'visa'			  => $_POST['inputVisa'],
+															 'veteran'		  => $_POST['inputVeteran'],
+															 'unix_linux'	  => $_POST['inputUnixLinux'],
+															 'sql'			  => $_POST['inputSql'],
+															 'git'			  => $_POST['inputGit'],
+															 'wordpress'	  => $_POST['inputWordpress'],
+															 'drupal'		  => $_POST['inputDrupal'],
+															 'python'		  => $_POST['inputPython'],
+															 'svn'			  => $_POST['inputSVN'],
+															 'objective_c'	  => $_POST['inputObjectiveC'],
+															 'ruby_rails'	  => $_POST['inputRuby'],
+															 'c_plusplus'	  => $_POST['inputCPlusPlus'],
+															 'dot_net'		  => $_POST['inputNet'],
+															 'php'			  => $_POST['inputPHP'],
+															 'html_css'		  => $_POST['inputHtmlCss'],
+															 'java'			  => $_POST['inputJava'],
+															 'javascript'	  => $_POST['inputJavascript'],
+															 'comments'		  => $_POST['inputComments'],
+															 'email'		  => $_POST['inputEmail'])
 						);
 					} else if ($_POST['updateDelete'] == 'delete') {
-						echo "We will delete now.";
-						//$apprentice = Apprentice::find_by_name($_POST['inputName']);
-						//$apprentice->delete();
+						//echo "We will delete now.";
+						$apprentice = Apprentice::find_by_name($_POST['inputName']);
+						$apprentice->delete();
 					}
 
 					$success = new h2o('views/happySuccess.html');
@@ -247,29 +247,34 @@
 			
 			# C.4 Edit Company Record
 				function editCompany() {
-					$company = Partner::find_by_name(params(0));
-					$company->update_attributes(array('name'		  =>	$_POST['inputName'],
-												 	  'city'		  =>	$_POST['inputCity'],
-													  'unix_linux'	  =>	$_POST['inputUnixLinux'],
-													  'sql'			  =>	$_POST['inputSql'],
-													  'git'			  =>	$_POST['inputGit'],
-													  'wordpress'	  =>	$_POST['inputWordpress'],
-													  'drupal'		  =>	$_POST['inputDrupal'],
-													  'python'		  =>	$_POST['inputPython'],
-													  'svn'			  =>	$_POST['inputSVN'],
-													  'objective_c'	  =>	$_POST['inputObjectiveC'],
-													  'ruby_rails'	  =>	$_POST['inputRuby'],
-													  'c_plusplus'	  =>	$_POST['inputCPlusPlus'],
-													  'dot_net'		  =>	$_POST['inputNet'],
-													  'php'			  =>	$_POST['inputPHP'],
-													  'html_css'	  =>	$_POST['inputHtmlCss'],
-													  'java'		  =>	$_POST['inputJava'],
-													  'javascript'	  =>	$_POST['inputJavascript'],
-													  'comments'	  =>	$_POST['inputComments'])
-				);
+					if ($_POST['updateDelete'] == 'update') {
+						$company = Partner::find_by_name(params(0));
+						$company->update_attributes(array('name'		  => $_POST['inputName'],
+													 	  'city'		  => $_POST['inputCity'],
+														  'unix_linux'	  => $_POST['inputUnixLinux'],
+														  'sql'			  => $_POST['inputSql'],
+														  'git'			  => $_POST['inputGit'],
+														  'wordpress'	  => $_POST['inputWordpress'],
+														  'drupal'		  => $_POST['inputDrupal'],
+														  'python'		  => $_POST['inputPython'],
+														  'svn'			  => $_POST['inputSVN'],
+														  'objective_c'	  => $_POST['inputObjectiveC'],
+														  'ruby_rails'	  => $_POST['inputRuby'],
+														  'c_plusplus'	  => $_POST['inputCPlusPlus'],
+														  'dot_net'		  => $_POST['inputNet'],
+														  'php'			  => $_POST['inputPHP'],
+														  'html_css'	  => $_POST['inputHtmlCss'],
+														  'java'		  => $_POST['inputJava'],
+														  'javascript'	  => $_POST['inputJavascript'],
+														  'comments'	  => $_POST['inputComments'])
+						);
+					} else if ($_POST['updateDelete'] == 'delete') {
+						$company = Partner::find_by_name($_POST['inputName']);
+						$company->delete();
+					}
 
-				$success = new h2o('views/happySuccess.html');
-				echo $success->render();
+					$success = new h2o('views/happySuccess.html');
+					echo $success->render();
 				}
 
 
