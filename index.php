@@ -25,6 +25,7 @@
 			require 'library/h2o/h2o.php';
 
 
+
 	## CONFIGURATIONS  ___________________________________________________________
 
 		# A. Database
@@ -38,9 +39,6 @@
  			});
 
 		# B. Routes
-		  
- 			option('base_uri', '/');
-
 		  #  In ('URL','FunctionName') format
 		  #  Tells the app: When 'URL' is visited run code contained in 'FunctionName'.
 
@@ -63,30 +61,30 @@
 
 	## FUNCTIONS  ________________________________________________________________
 
-		# A. Index Functions
+		# A. Index
 			
 			# A.1 Display Index
 
 				function index() {
 
-					# @param partnerMenu is an array containing all Partner Company records in database.
-					# Used to display the company names in our drop-down menu.
-					# Could be refactored to only retrieve Name column from records.
-					# If refactored currentPartner must also be refactored since it requires a complete record object.
+					/* @param partnerMenu is an array containing all Partner Company records in database.
+					 * Used to display the company names in our drop-down menu.
+					 * Could be refactored to only retrieve Name column from records.
+					 * If refactored currentPartner must also be refactored since it requires a complete record object. */
 
 					$partnerMenu = allPartnersAscending();
 					
-					# @param currentPartner determines which partner company we are displaying in the table.
+					/* @param currentPartner determines which partner company we are displaying in the table. */
 					$currentPartner = $partnerMenu[0];
 					
-					# @param skillsArray is an array of all skills required by given Partner company.
+					/* @param skillsArray is an array of all skills required by given Partner company. */
 					$skillsArray = getCompanySkills($currentPartner);
 					
-					# @param apprenticeArray is an array containing all Apprentice records in database.
+					/* @param apprenticeArray is an array containing all Apprentice records in database. */
 					$apprenticeArray = Apprentice::all();
 
-					# h2o calls 'table.html'.
-					# Since 'table.html' inherits from 'base.html' the application will automatically load 'base.html' as well.
+					/* h2o calls 'table.html'. */
+					/* Since 'table.html' inherits from 'base.html' the application will automatically load 'base.html' as well. */
 					$index = new h2o('views/table.html');
 					echo $index->render(compact('partnerMenu','currentPartner','skillsArray','apprenticeArray'));
 				}
@@ -96,7 +94,7 @@
 				function index_post() {
 					$partnerMenu = allPartnersAscending();
 
-					# @param currentPartner is set to whichever company was chosen from the drop-drown menu.
+					/* @param currentPartner is set to whichever company was chosen from the drop-drown menu. */
 					$currentPartner = Partner::find_by_name($_POST['inputCompany']);
 
 					$skillsArray = getCompanySkills($currentPartner);
@@ -106,7 +104,7 @@
 					echo $index->render(compact('partnerMenu','currentPartner','skillsArray','apprenticeArray'));
 				}
 
-		# B. Apprentice Functions
+		# B. Apprentice
 
 			# B.1 Display Add Apprentice Form
 
@@ -146,6 +144,7 @@
 												 'comments'		  =>	$_POST['inputComments'],
 												 'email'		  =>	$POST['inputEmail'])
 					);
+
 					$success = new h2o('views/happySuccess.html');
 					echo $success->render();
 				}
@@ -163,7 +162,7 @@
 				function editApprentice() {
 					if ($_POST['updateDelete'] == 'update') {
 						
-						# params(0) represents the apprentice name passed via the URL
+						/* params(0) represents the apprentice name passed via the URL */
 						$apprentice = Apprentice::find_by_name(params(0));
 						
 						$apprentice->update_attributes(array('name'			  => $_POST['inputName'],
@@ -203,8 +202,7 @@
 					echo $success->render();
 				}
 
-		
-		# C. Partner Company Functions
+		# C. Partner Company
 
 			# C.1 Display Add Company Form
 
@@ -234,6 +232,7 @@
 											'javascript'  =>	$_POST['inputJavascript'],
 											'comments'	  =>	$_POST['inputComments'])
 					);
+
 					$success = new h2o('views/happySuccess.html');
 					echo $success->render();
 				}
@@ -251,7 +250,7 @@
 				function editCompany() {
 					if ($_POST['updateDelete'] == 'update') {
 
-						# params(0) represents the apprentice name passed in via the URL
+						/* params(0) represents the apprentice name passed in via the URL */
 						$company = Partner::find_by_name(params(0));
 						
 						$company->update_attributes(array('name'		  => $_POST['inputName'],
@@ -282,10 +281,9 @@
 					echo $success->render();
 				}
 
+		# D. Helpers
 
-		## HELPERS ______________________________________
-
-			# A. Database
+			# D.1 Database
 			
 				function allPartnersAscending() {
 
@@ -328,7 +326,7 @@
 					return $skills;
 				}
 
-			# B. Templates
+			# D.2 Templates
 
 				h2o::addFilter('stripSpaces');
 				function stripSpaces($string) {
