@@ -3,264 +3,345 @@
 {% block content %}
 
 <div class="col-xs-8 col-xs-offset-2">
+
 <form class="form-horizontal" method="POST">
-<fieldset>
+  <fieldset>
 
-<!-- Form Name -->
-<legend>Add A Partner Company</legend>
+  <!-- Form Name -->
+    <legend>Add A Partner Company</legend>
 
+  <!-- Company Name Input -->
     <div class="form-group">
+
       <label class="col-xs-5 control-label" for="inputName">Company Name</label>  
+      
       <div class="col-xs-5 bottomMargin">
         <input id="inputName" name="inputName" type="text" placeholder="Independent Software" class="form-control input-md" required="">  
       </div>
+
     </div>
 
+  <!-- Company City Input -->
     <div class="form-group">
+      
       <label class="col-xs-5 control-label" for="inputCity">City</label>  
+      
       <div class="col-xs-5 bottomMargin">
         <input id="inputCity" name="inputCity" type="text" placeholder="New Haven" class="form-control input-md" required="">  
       </div>
-    </div>
-
-<!-- Unix/Linux Radios (inline) -->
-<div class="form-group">
-  <label class="col-md-5 control-label" for="inputUnixLinux">Unix/Linux</label>
-  <div class="col-md-5"> 
-  
-    <label class="radio-inline" for="inputUnixLinux">
-      <input type="radio" name="inputUnixLinux" id="inputUnixLinux" value="0" checked="checked"> 0
-    </label> 
     
-    <label class="radio-inline" for="inputUnixLinux">
-      <input type="radio" name="inputUnixLinux" id="inputUnixLinux" value="1"> 1
-    </label> 
-  </div>
-</div>
+    </div>
 
-<!-- C++ Radios (inline) -->
-<div class="form-group">
-  <label class="col-md-5 control-label" for="inputCPlusPlus">C++</label>
-  <div class="col-md-5"> 
-    <label class="radio-inline" for="inputCPlusPlus">
-      <input type="radio" name="inputCPlusPlus" id="inputCPlusPlus" value="0" checked="checked">
-      0
-    </label> 
-    <label class="radio-inline" for="inputCPlusPlus">
-      <input type="radio" name="inputCPlusPlus" id="inputCPlusPlus" value="1">
-      1
-    </label> 
-  </div>
-</div>
-
-<!-- HTML/CSS Radios (inline) -->
-<div class="form-group">
-  <label class="col-md-5 control-label" for="inputHtmlCss">HTML/CSS</label>
-  <div class="col-md-5"> 
-    <label class="radio-inline" for="inputHtmlCss">
-      <input type="radio" name="inputHtmlCss" id="inputHtmlCss" value="0" checked="checked">
-      0
-    </label> 
-    <label class="radio-inline" for="inputHtmlCss">
-      <input type="radio" name="inputHtmlCss" id="inputHtmlCss" value="1">
-      1
-    </label> 
-  </div>
-</div>
-
-<!-- Java Radios (inline) -->
-<div class="form-group">
-  <label class="col-md-5 control-label" for="inputJava">Java</label>
-  <div class="col-md-5"> 
-    <label class="radio-inline" for="inputJava">
-      <input type="radio" name="inputJava" id="inputJava" value="0" checked="checked">
-      0
-    </label> 
-    <label class="radio-inline" for="inputJava">
-      <input type="radio" name="inputJava" id="inputJava" value="1">
-      1
-    </label> 
-  </div>
-</div>
-
-<!-- Javascript Radios (inline) -->
-<div class="form-group">
-  <label class="col-md-5 control-label" for="inputJavascript">Javascript</label>
-  <div class="col-md-5"> 
-    <label class="radio-inline" for="inputJavascript">
-      <input type="radio" name="inputJavascript" id="inputJavascript" value="0" checked="checked">
-      0
-    </label> 
-    <label class="radio-inline" for="inputJavascript">
-      <input type="radio" name="inputJavascript" id="inputJavascript" value="1">
-      1
-    </label> 
-  </div>
-</div>
-
-<!-- .Net/C# Radios (inline) -->
-<div class="form-group">
-  <label class="col-md-5 control-label" for="inputNet">.Net/C#</label>
-  <div class="col-md-5"> 
-    <label class="radio-inline" for="inputNet">
-      <input type="radio" name="inputNet" id="inputNet" value="0" checked="checked">
-      0
-    </label> 
-    <label class="radio-inline" for="inputNet">
-      <input type="radio" name="inputNet" id="inputNet" value="1">
-      1
-    </label> 
-  </div>
-</div>
-
-<!-- Objective-C Radios (inline) -->
-<div class="form-group">
-  <label class="col-md-5 control-label" for="inputObjectiveC">Objective-C</label>
-  <div class="col-md-5"> 
-    <label class="radio-inline" for="inputObjectiveC">
-      <input type="radio" name="inputObjectiveC" id="inputObjectiveC" value="0" checked="checked">
-      0
-    </label> 
-    <label class="radio-inline" for="inputObjectiveC">
-      <input type="radio" name="inputObjectiveC" id="inputObjectiveC" value="1">
-      1
-    </label> 
-  </div>
-</div>
-
-<!-- PHP Radios (inline) -->
-<div class="form-group">
-  <label class="col-md-5 control-label" for="inputPHP">PHP</label>
-  <div class="col-md-5"> 
-    <label class="radio-inline" for="inputPHP">
-      <input type="radio" name="inputPHP" id="inputPHP" value="0" checked="checked">
-      0
-    </label> 
-    <label class="radio-inline" for="inputPHP">
-      <input type="radio" name="inputPHP" id="inputPHP" value="1">
-      1
-    </label> 
-  </div>
-</div>
-
-<!-- Python Radios (inline) -->
-<div class="form-group">
-  <label class="col-md-5 control-label" for="inputPython">Python</label>
-  <div class="col-md-5"> 
-    <label class="radio-inline" for="inputPython">
-      <input type="radio" name="inputPython" id="inputPython" value="0" checked="checked">
-      0
-    </label> 
-    <label class="radio-inline" for="inputPython">
-      <input type="radio" name="inputPython" id="inputPython" value="1">
-      1
-    </label> 
-  </div>
-</div>
-
-<!-- Ruby/Rails Radios (inline) -->
-<div class="form-group">
-  <label class="col-md-5 control-label" for="inputRuby">Ruby/Rails</label>
-  <div class="col-md-5"> 
-    <label class="radio-inline" for="inputRuby">
-      <input type="radio" name="inputRuby" id="inputRuby" value="0" checked="checked">
-      0
-    </label> 
-    <label class="radio-inline" for="inputRuby">
-      <input type="radio" name="inputRuby" id="inputRuby" value="1">
-      1
-    </label> 
-  </div>
-</div>
-
-<!-- SQL Radios (inline) -->
-<div class="form-group">
-  <label class="col-md-5 control-label" for="inputSql">SQL</label>
-  <div class="col-md-5"> 
-    <label class="radio-inline" for="inputSql">
-      <input type="radio" name="inputSql" id="inputSql" value="0" checked="checked">
-      0
-    </label> 
-    <label class="radio-inline" for="inputSql">
-      <input type="radio" name="inputSql" id="inputSql" value="1">
-      1
-    </label> 
-  </div>
-</div>
-
-<!-- Drupal Radios (inline) -->
-<div class="form-group">
-  <label class="col-md-5 control-label" for="inputDrupal">Drupal</label>
-  <div class="col-md-5"> 
-    <label class="radio-inline" for="inputDrupal">
-      <input type="radio" name="inputDrupal" id="inputDrupal" value="0" checked="checked">
-      0
-    </label> 
-    <label class="radio-inline" for="inputDrupal">
-      <input type="radio" name="inputDrupal" id="inputDrupal" value="1">
-      1
-    </label> 
-  </div>
-</div>
-
-<!-- WordPress Radios (inline) -->
-<div class="form-group">
-  <label class="col-md-5 control-label" for="inputWordpress">WordPress</label>
-  <div class="col-md-5"> 
-    <label class="radio-inline" for="inputWordpress">
-      <input type="radio" name="inputWordpress" id="inputWordpress" value="0" checked="checked"> 0
-    </label> 
-    <label class="radio-inline" for="inputWordpress">
-      <input type="radio" name="inputWordpress" id="inputWordpress" value="1"> 1
-    </label> 
-  </div>
-</div>
-
-<!-- Git Radios (inline) -->
-<div class="form-group">
-  <label class="col-md-5 control-label" for="inputGit">Git/GitHub</label>
-  
-  <div class="col-md-5"> 
-    <label class="radio-inline" for="inputGit">
-      <input type="radio" name="inputGit" id="inputGit" value="0" checked="checked">
-      0
-    </label> 
-    <label class="radio-inline" for="inputGit">
-      <input type="radio" name="inputGit" id="inputGit" value="1">
-      1
-    </label> 
-  </div>
-</div>
-
-<!-- SVN Radios (inline) -->
-  <div class="form-group">
-    <label class="col-md-5 control-label" for="inputSVN">SVN</label>
-      <div class="col-md-5 bottomMargin"> 
-        <label class="radio-inline" for="inputSVN">
-          <input type="radio" name="inputSVN" id="inputSVN" value="0" checked="checked"> 0 </label> 
-        <label class="radio-inline" for="inputSVN">
-          <input type="radio" name="inputSVN" id="inputSVN" value="1"> 1
+  <!-- Unix/Linux Radios (inline) -->
+    <div class="form-group">
+      
+      <label class="col-md-5 control-label" for="inputUnixLinux">Unix/Linux</label>
+      
+      <div class="col-md-5"> 
+      
+        <label class="radio-inline" for="inputUnixLinux">
+          <input type="radio" name="inputUnixLinux" id="inputUnixLinux" value="0" checked="checked"> 0
         </label> 
+        
+        <label class="radio-inline" for="inputUnixLinux">
+          <input type="radio" name="inputUnixLinux" id="inputUnixLinux" value="1"> 1
+        </label> 
+      
       </div>
-  </div>
-
-<!-- Textarea -->
-  <div class="form-group">
-    <label class="col-md-5 control-label" for="inputComments">Comments</label>
-    <div class="col-md-6 bottomMargin">                     
-      <textarea class="form-control" id="inputComments" name="inputComments" rows="5" placeholder="Additional Comments..."></textarea>
+    
     </div>
-  </div>
 
-<!-- Submit Button -->
-  <div class="form-group">
-    <label class="col-md-5 control-label" for="submitButton"></label>
-    <div class="col-md-5">
-      <button id="submitButton" name="submitButton" class="btn btn-sm btn-normal">Submit</button>
+  <!-- C++ Radios (inline) -->
+    <div class="form-group">
+      
+      <label class="col-md-5 control-label" for="inputCPlusPlus">C++</label>
+      
+      <div class="col-md-5"> 
+        
+        <label class="radio-inline" for="inputCPlusPlus">
+          <input type="radio" name="inputCPlusPlus" id="inputCPlusPlus" value="0" checked="checked"> 0
+        </label> 
+        
+        <label class="radio-inline" for="inputCPlusPlus">
+          <input type="radio" name="inputCPlusPlus" id="inputCPlusPlus" value="1"> 1
+        </label> 
+      
+      </div>
+   
     </div>
-  </div>
 
-</fieldset>
+  <!-- HTML/CSS Radios (inline) -->
+    <div class="form-group">
+      
+      <label class="col-md-5 control-label" for="inputHtmlCss">HTML/CSS</label>
+      
+      <div class="col-md-5"> 
+        
+        <label class="radio-inline" for="inputHtmlCss">
+          <input type="radio" name="inputHtmlCss" id="inputHtmlCss" value="0" checked="checked"> 0
+        </label> 
+        
+        <label class="radio-inline" for="inputHtmlCss">
+          <input type="radio" name="inputHtmlCss" id="inputHtmlCss" value="1"> 1
+        </label> 
+      
+      </div>
+    
+    </div>
+
+  <!-- Java Radios (inline) -->
+    <div class="form-group">
+      
+      <label class="col-md-5 control-label" for="inputJava">Java</label>
+      
+      <div class="col-md-5"> 
+        
+        <label class="radio-inline" for="inputJava">
+          <input type="radio" name="inputJava" id="inputJava" value="0" checked="checked"> 0
+        </label> 
+        
+        <label class="radio-inline" for="inputJava">
+          <input type="radio" name="inputJava" id="inputJava" value="1"> 1
+        </label> 
+      
+      </div>
+    
+    </div>
+
+  <!-- Javascript Radios (inline) -->
+    <div class="form-group">
+      
+      <label class="col-md-5 control-label" for="inputJavascript">Javascript</label>
+      
+      <div class="col-md-5"> 
+        
+        <label class="radio-inline" for="inputJavascript">
+          <input type="radio" name="inputJavascript" id="inputJavascript" value="0" checked="checked"> 0
+        </label> 
+        
+        <label class="radio-inline" for="inputJavascript">
+          <input type="radio" name="inputJavascript" id="inputJavascript" value="1"> 1
+        </label> 
+      
+      </div>
+    
+    </div>
+
+  <!-- .Net/C# Radios (inline) -->
+    <div class="form-group">
+      
+      <label class="col-md-5 control-label" for="inputNet">.Net/C#</label>
+      
+      <div class="col-md-5"> 
+        
+        <label class="radio-inline" for="inputNet">
+          <input type="radio" name="inputNet" id="inputNet" value="0" checked="checked"> 0
+        </label> 
+        
+        <label class="radio-inline" for="inputNet">
+          <input type="radio" name="inputNet" id="inputNet" value="1"> 1
+        </label> 
+      
+      </div>
+    
+    </div>
+
+  <!-- Objective-C Radios (inline) -->
+    <div class="form-group">
+      
+      <label class="col-md-5 control-label" for="inputObjectiveC">Objective-C</label>
+     
+      <div class="col-md-5"> 
+       
+        <label class="radio-inline" for="inputObjectiveC">
+          <input type="radio" name="inputObjectiveC" id="inputObjectiveC" value="0" checked="checked"> 0
+        </label> 
+        
+        <label class="radio-inline" for="inputObjectiveC">
+          <input type="radio" name="inputObjectiveC" id="inputObjectiveC" value="1"> 1
+        </label> 
+      
+      </div>
+    
+    </div>
+
+  <!-- PHP Radios (inline) -->
+    <div class="form-group">
+      
+      <label class="col-md-5 control-label" for="inputPHP">PHP</label>
+      
+      <div class="col-md-5"> 
+        
+        <label class="radio-inline" for="inputPHP">
+          <input type="radio" name="inputPHP" id="inputPHP" value="0" checked="checked"> 0
+        </label> 
+        
+        <label class="radio-inline" for="inputPHP">
+          <input type="radio" name="inputPHP" id="inputPHP" value="1"> 1
+        </label> 
+      
+      </div>
+    
+    </div>
+
+  <!-- Python Radios (inline) -->
+    <div class="form-group">
+      
+      <label class="col-md-5 control-label" for="inputPython">Python</label>
+      
+      <div class="col-md-5"> 
+        
+        <label class="radio-inline" for="inputPython">
+          <input type="radio" name="inputPython" id="inputPython" value="0" checked="checked"> 0
+        </label> 
+        
+        <label class="radio-inline" for="inputPython">
+          <input type="radio" name="inputPython" id="inputPython" value="1"> 1
+        </label> 
+      
+      </div>
+    
+    </div>
+
+  <!-- Ruby/Rails Radios (inline) -->
+    <div class="form-group">
+      
+      <label class="col-md-5 control-label" for="inputRuby">Ruby/Rails</label>
+      
+      <div class="col-md-5"> 
+       
+        <label class="radio-inline" for="inputRuby">
+          <input type="radio" name="inputRuby" id="inputRuby" value="0" checked="checked"> 0
+        </label> 
+        
+        <label class="radio-inline" for="inputRuby">
+          <input type="radio" name="inputRuby" id="inputRuby" value="1"> 1
+        </label> 
+     
+      </div>
+    
+    </div>
+
+  <!-- SQL Radios (inline) -->
+    <div class="form-group">
+     
+      <label class="col-md-5 control-label" for="inputSql">SQL</label>
+      
+      <div class="col-md-5"> 
+       
+        <label class="radio-inline" for="inputSql">
+          <input type="radio" name="inputSql" id="inputSql" value="0" checked="checked"> 0
+        </label> 
+        
+        <label class="radio-inline" for="inputSql">
+          <input type="radio" name="inputSql" id="inputSql" value="1">
+          1
+        </label> 
+      
+      </div>
+    
+    </div>
+
+  <!-- Drupal Radios (inline) -->
+    <div class="form-group">
+     
+      <label class="col-md-5 control-label" for="inputDrupal">Drupal</label>
+      
+      <div class="col-md-5"> 
+        
+        <label class="radio-inline" for="inputDrupal">
+          <input type="radio" name="inputDrupal" id="inputDrupal" value="0" checked="checked"> 0
+        </label> 
+        
+        <label class="radio-inline" for="inputDrupal">
+          <input type="radio" name="inputDrupal" id="inputDrupal" value="1"> 1
+        </label> 
+      
+      </div>
+    
+    </div>
+
+  <!-- WordPress Radios (inline) -->
+    <div class="form-group">
+      
+      <label class="col-md-5 control-label" for="inputWordpress">WordPress</label>
+      
+      <div class="col-md-5"> 
+        
+        <label class="radio-inline" for="inputWordpress">
+          <input type="radio" name="inputWordpress" id="inputWordpress" value="0" checked="checked"> 0
+        </label> 
+        
+        <label class="radio-inline" for="inputWordpress">
+          <input type="radio" name="inputWordpress" id="inputWordpress" value="1"> 1
+        </label> 
+      
+      </div>
+    
+    </div>
+
+  <!-- Git Radios (inline) -->
+    <div class="form-group">
+      
+      <label class="col-md-5 control-label" for="inputGit">Git/GitHub</label>
+      
+      <div class="col-md-5"> 
+        
+        <label class="radio-inline" for="inputGit">
+          <input type="radio" name="inputGit" id="inputGit" value="0" checked="checked"> 0
+        </label> 
+        
+        <label class="radio-inline" for="inputGit">
+          <input type="radio" name="inputGit" id="inputGit" value="1"> 1
+        </label> 
+      
+      </div>
+    
+    </div>
+
+  <!-- SVN Radios (inline) -->
+    <div class="form-group">
+      
+      <label class="col-md-5 control-label" for="inputSVN">SVN</label>
+        
+        <div class="col-md-5 bottomMargin"> 
+          
+          <label class="radio-inline" for="inputSVN">
+            <input type="radio" name="inputSVN" id="inputSVN" value="0" checked="checked"> 0
+          </label> 
+          
+          <label class="radio-inline" for="inputSVN">
+            <input type="radio" name="inputSVN" id="inputSVN" value="1"> 1
+          </label> 
+        
+        </div>
+    
+    </div>
+
+  <!-- Comments Textarea -->
+    <div class="form-group">
+      
+      <label class="col-md-5 control-label" for="inputComments">Comments</label>
+      
+      <div class="col-md-6 bottomMargin">                     
+        <textarea class="form-control" id="inputComments" name="inputComments" rows="5" placeholder="Additional Comments..."></textarea>
+      </div>
+    
+    </div>
+
+  <!-- Submit Button -->
+    <div class="form-group">
+      
+      <label class="col-md-5 control-label" for="submitButton"></label>
+      
+      <div class="col-md-5">
+        <button id="submitButton" name="submitButton" class="btn btn-sm btn-normal">Submit</button>
+      </div>
+    
+    </div>
+
+  </fieldset>
 </form>
+
 </div>
-  {% endblock %}
+{% endblock %}

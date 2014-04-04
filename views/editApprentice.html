@@ -1,8 +1,8 @@
 {% extends 'base.html' %}
 
-  {% block content %}
+{% block content %}
 
-  <div class="col-xs-8 col-xs-offset-2">
+<div class="col-xs-8 col-xs-offset-2">
     
 <form class="form-horizontal" method="POST">
   <fieldset>
@@ -10,465 +10,576 @@
   <!-- Form Name -->
     <legend><h4>Edit Apprentice</h4></legend>
 
-<!-- Multiple Radios -->
-<div class="control-group">
-  <label class=" col-xs-5 control-label" for="updateDelete"></label>
-  <div class="controls col-xs-5 bottomMargin">
-    <label class="radio-inline" for="updateDelete">
-      <input type="radio" name="updateDelete" id="updateDelete" value="update" checked="checked"><p class="text-success">Update Record</p>
-    </label>
-    <label class="radio-inline" for="updateDelete">
-      <input type="radio" name="updateDelete" id="updateDelete" value="delete"><p class="text-danger">Delete Record</p>
-    </label>
-  </div>
-</div>
+  <!-- Update/Delete Radios -->
+    <div class="control-group">
+      
+      <label class=" col-xs-5 control-label" for="updateDelete"></label>
+      
+      <div class="controls col-xs-5 bottomMargin">
+        
+        <label class="radio-inline" for="updateDelete">
+          <input type="radio" name="updateDelete" id="updateDelete" value="update" checked="checked"><p class="text-success">Update Record</p>
+        </label>
+        
+        <label class="radio-inline" for="updateDelete">
+          <input type="radio" name="updateDelete" id="updateDelete" value="delete"><p class="text-danger">Delete Record</p>
+        </label>
+      
+      </div>
+
+    </div>
 
   <!-- Name input-->
     <div class="form-group">
+      
       <label class="col-xs-5 control-label" for="inputName">Apprentice Name</label>  
+      
       <div class="col-xs-5 bottomMargin">
         <input id="inputName" name="inputName" type="text" class="form-control input-md" value="{{apprentice.name}}" required="">  
       </div>
+    
     </div>
 
   <!-- Cohort input-->
     <div class="form-group">
     
       <label class="col-md-5 control-label" for="inputCohort">Cohort</label>  
-        <div class="col-md-5 bottomMargin">
-          <input id="inputCohort" name="inputCohort" type="text" class="form-control input-md" value="{{apprentice.cohort}}">  
-        </div>
+        
+      <div class="col-md-5 bottomMargin">
+        <input id="inputCohort" name="inputCohort" type="text" class="form-control input-md" value="{{apprentice.cohort}}">  
+      </div>
     
     </div>
 
   <!-- Address input-->
     <div class="form-group">
+      
       <label class="col-md-5 control-label" for="inputAddress">Address</label>  
-        <div class="col-md-5 bottomMargin">
-          <input id="inputAddress" name="inputAddress" type="text" value="{{apprentice.address}}" class="form-control input-md">
-        </div>
+        
+      <div class="col-md-5 bottomMargin">
+        <input id="inputAddress" name="inputAddress" type="text" value="{{apprentice.address}}" class="form-control input-md">
+      </div>
+    
     </div>
 
   <!-- City input-->
     <div class="form-group">
+      
       <label class="col-md-5 control-label" for="inputCity">City</label>  
+        
         <div class="col-md-5 bottomMargin">
           <input id="inputCity" name="inputCity" type="text" value="{{apprentice.city}}" class="form-control input-md">
         </div>  
+    
     </div>
 
   <!-- Telephone input-->
     <div class="form-group">
+      
       <label class="col-md-5 control-label" for="inputTelephone">Telephone</label>  
-        <div class="col-md-5 bottomMargin">
-          <input id="inputTelephone" name="inputTelephone" type="text" value="{{apprentice.telephone}}" class="form-control input-md">
-        </div>
+        
+      <div class="col-md-5 bottomMargin">
+        <input id="inputTelephone" name="inputTelephone" type="text" value="{{apprentice.telephone}}" class="form-control input-md">
+      </div>
+    
     </div>
 
   <!-- Email input-->
     <div class="form-group">
+     
       <label class="col-md-5 control-label" for="inputEmail">Email</label>  
-        <div class="col-md-5 bottomMargin">
-          <input id="inputEmail" name="inputEmail" type="text" value="{{apprentice.Email}}" class="form-control input-md">
-        </div>
+       
+      <div class="col-md-5 bottomMargin">
+        <input id="inputEmail" name="inputEmail" type="text" value="{{apprentice.Email}}" class="form-control input-md">
+      </div>
+    
     </div>
 
   <!-- School input-->
     <div class="form-group">
+     
       <label class="col-md-5 control-label" for="inputSchool">School</label>  
-        <div class="col-md-5 bottomMargin">
-          <input id="inputSchool" name="inputSchool" type="text" value="{{apprentice.school}}" class="form-control input-md">
-        </div>
+        
+      <div class="col-md-5 bottomMargin">
+        <input id="inputSchool" name="inputSchool" type="text" value="{{apprentice.school}}" class="form-control input-md">
+      </div>
+    
     </div>
 
   <!-- Graduation input-->
     <div class="form-group">
+     
       <label class="col-md-5 control-label" for="inputGraduation">Graduation</label>  
+     
       <div class="col-md-5 bottomMargin">
         <input id="inputGraduation" name="inputGraduation" type="text" value="{{apprentice.graduation}}" class="form-control input-md">
       </div>
+    
     </div>
 
   <!-- Work Experience input-->
     <div class="form-group">
+      
       <label class="col-md-5 control-label" for="inputWorkExperience">Years Work Experience</label>
+      
       <div class="col-md-5 bottomMargin">
         <input id="inputWorkExperience" name="inputWorkExperience" type="text" value="{{apprentice.workexperience}}" class="form-control input-md">
       </div>
+    
     </div>
 
-<!-- Visa input-->
-<div class="form-group">
-  <label class="col-md-5 control-label" for="inputVisa">Visa Status</label>  
-  <div class="col-md-5 bottomMargin">
-  <input id="inputVisa" name="inputVisa" type="text" class="form-control input-md">
+  <!-- Visa input-->
+    <div class="form-group">
+      
+      <label class="col-md-5 control-label" for="inputVisa">Visa Status</label>  
+      
+      <div class="col-md-5 bottomMargin">
+        <input id="inputVisa" name="inputVisa" type="text" class="form-control input-md">
+      </div>
+
+    </div>
+
+  <!-- Veteran input-->
+    <div class="form-group">
+      
+      <label class="col-md-5 control-label" for="inputVeteran">Veteran Status</label>  
+      
+      <div class="col-md-5 bottomMargin">
+        <input id="inputVeteran" name="inputVeteran" type="text" class="form-control input-md">  
+      </div>
     
-  </div>
-</div>
+    </div>
 
-<!-- Veteran input-->
-<div class="form-group">
-  <label class="col-md-5 control-label" for="inputVeteran">Veteran Status</label>  
-  <div class="col-md-5 bottomMargin">
-  <input id="inputVeteran" name="inputVeteran" type="text" class="form-control input-md">
+  <!-- Unix/Linux Radios (inline) -->
+    <div class="form-group">
+      
+      <label class="col-md-5 control-label" for="inputUnixLinux">Unix/Linux</label>
+      
+      <div class="col-md-5"> 
+      
+        <label class="radio-inline" for="inputUnixLinux-0">
+          <input type="radio" name="inputUnixLinux" id="inputUnixLinux-0" value="0" {% if apprentice.unix_linux=="0" %}checked="checked" {% endif %}> 0
+        </label> 
+        
+        <label class="radio-inline" for="inputUnixLinux-1">
+          <input type="radio" name="inputUnixLinux" id="inputUnixLinux-1" value="1"{% if apprentice.unix_linux=="1" %}checked="checked" {% endif %}> 1
+        </label> 
+        
+        <label class="radio-inline" for="inputUnixLinux-2">
+          <input type="radio" name="inputUnixLinux" id="inputUnixLinux-2" value="2"{% if apprentice.unix_linux=="2" %}checked="checked" {% endif %}> 2
+        </label> 
+        
+        <label class="radio-inline" for="inputUnixLinux-3">
+          <input type="radio" name="inputUnixLinux" id="inputUnixLinux-3" value="3"{% if apprentice.unix_linux=="3" %}checked="checked" {% endif %}> 3
+        </label>
+      
+      </div>
     
-  </div>
-</div>
+    </div>
 
-<!-- Unix/Linux Radios (inline) -->
-<div class="form-group">
-  <label class="col-md-5 control-label" for="inputUnixLinux">Unix/Linux</label>
-  <div class="col-md-5"> 
-  
-    <label class="radio-inline" for="inputUnixLinux-0">
-      <input type="radio" name="inputUnixLinux" id="inputUnixLinux-0" value="0" {% if apprentice.unix_linux=="0" %}checked="checked" {% endif %}> 0
-    </label> 
+  <!-- C++ Radios (inline) -->
+    <div class="form-group">
+      
+      <label class="col-md-5 control-label" for="inputCPlusPlus">C++</label>
+      
+      <div class="col-md-5"> 
+        
+        <label class="radio-inline" for="inputCPlusPlus-0">
+          <input type="radio" name="inputCPlusPlus" id="inputCPlusPlus-0" value="0"{% if apprentice.c_plusplus=="0" %}checked="checked" {% endif %}> 0
+        </label> 
+        
+        <label class="radio-inline" for="inputCPlusPlus-1">
+          <input type="radio" name="inputCPlusPlus" id="inputCPlusPlus-1" value="1"{% if apprentice.c_plusplus=="1" %}checked="checked" {% endif %}> 1
+        </label> 
+       
+        <label class="radio-inline" for="inputCPlusPlus-2">
+          <input type="radio" name="inputCPlusPlus" id="inputCPlusPlus-2" value="2"{% if apprentice.c_plusplus=="2" %}checked="checked" {% endif %}> 2
+        </label> 
+        
+        <label class="radio-inline" for="inputCPlusPlus-3">
+          <input type="radio" name="inputCPlusPlus" id="inputCPlusPlus-3" value="3"{% if apprentice.c_plusplus=="3" %}checked="checked" {% endif %}> 3
+        </label>
+      
+      </div>
     
-    <label class="radio-inline" for="inputUnixLinux-1">
-      <input type="radio" name="inputUnixLinux" id="inputUnixLinux-1" value="1"{% if apprentice.unix_linux=="1" %}checked="checked" {% endif %}> 1
-    </label> 
+    </div>
+
+  <!-- HTML/CSS Radios (inline) -->
+    <div class="form-group">
+      
+      <label class="col-md-5 control-label" for="inputHtmlCss">HTML/CSS</label>
+      
+      <div class="col-md-5"> 
+        
+        <label class="radio-inline" for="inputHtmlCss-0">
+          <input type="radio" name="inputHtmlCss" id="inputHtmlCss-0" value="0"{% if apprentice.html_css=="0" %}checked="checked" {% endif %}> 0
+        </label> 
+        
+        <label class="radio-inline" for="inputHtmlCss-1">
+          <input type="radio" name="inputHtmlCss" id="inputHtmlCss-1" value="1"{% if apprentice.html_css=="1" %}checked="checked" {% endif %}> 1
+        </label> 
+        
+        <label class="radio-inline" for="inputHtmlCss-2">
+          <input type="radio" name="inputHtmlCss" id="inputHtmlCss-2" value="2"{% if apprentice.html_css=="2" %}checked="checked" {% endif %}> 2
+        </label> 
+        
+        <label class="radio-inline" for="inputHtmlCss-3">
+          <input type="radio" name="inputHtmlCss" id="inputHtmlCss-3" value="3"{% if apprentice.html_css=="3" %}checked="checked" {% endif %}> 3
+        </label>
+      
+      </div>
+   
+    </div>
+
+  <!-- Java Radios (inline) -->
+    <div class="form-group">
+      
+      <label class="col-md-5 control-label" for="inputJava">Java</label>
+      
+      <div class="col-md-5"> 
+        
+        <label class="radio-inline" for="inputJava-0">
+          <input type="radio" name="inputJava" id="inputJava-0" value="0"{% if apprentice.java=="0" %}checked="checked" {% endif %}> 0
+        </label> 
+        
+        <label class="radio-inline" for="inputJava-1">
+          <input type="radio" name="inputJava" id="inputJava-1" value="1"{% if apprentice.java=="1" %}checked="checked" {% endif %}> 1
+        </label> 
+        
+        <label class="radio-inline" for="inputJava-2">
+          <input type="radio" name="inputJava" id="inputJava-2" value="2"{% if apprentice.java=="2" %}checked="checked" {% endif %}> 2
+        </label> 
+        
+        <label class="radio-inline" for="inputJava-3">
+          <input type="radio" name="inputJava" id="inputJava-3" value="3"{% if apprentice.java=="3" %}checked="checked" {% endif %}> 3
+        </label>
+      
+      </div>
+   
+    </div>
+
+  <!-- Javascript Radios (inline) -->
+    <div class="form-group">
+      
+      <label class="col-md-5 control-label" for="inputJavascript">Javascript</label>
+      
+      <div class="col-md-5"> 
+       
+        <label class="radio-inline" for="inputJavascript-0">
+          <input type="radio" name="inputJavascript" id="inputJavascript-0" value="0" {% if apprentice.javascript=="0" %}checked="checked" {% endif %}> 0
+        </label> 
+        
+        <label class="radio-inline" for="inputJavascript-1">
+          <input type="radio" name="inputJavascript" id="inputJavascript-1" value="1" {% if apprentice.javascript=="1" %}checked="checked" {% endif %}> 1
+        </label> 
+        
+        <label class="radio-inline" for="inputJavascript-2">
+          <input type="radio" name="inputJavascript" id="inputJavascript-2" value="2" {% if apprentice.javascript=="2" %}checked="checked" {% endif %}> 2
+        </label>
+       
+       <label class="radio-inline" for="inputJavascript-3">
+          <input type="radio" name="inputJavascript" id="inputJavascript-3" value="3" {% if apprentice.javascript=="3" %}checked="checked" {% endif %}> 3
+        </label>
+      
+      </div>
+   
+    </div>
+
+  <!-- .Net/C# Radios (inline) -->
+    <div class="form-group">
+      
+      <label class="col-md-5 control-label" for="inputNet">.Net/C#</label>
+      
+      <div class="col-md-5"> 
+        
+        <label class="radio-inline" for="inputNet-0">
+          <input type="radio" name="inputNet" id="inputNet-0" value="0" {% if apprentice.dot_net=="0" %}checked="checked" {% endif %}> 0
+        </label> 
+        
+        <label class="radio-inline" for="inputNet-1">
+          <input type="radio" name="inputNet" id="inputNet-1" value="1" {% if apprentice.dot_net=="1" %}checked="checked" {% endif %}> 1
+        </label> 
+        
+        <label class="radio-inline" for="inputNet-2">
+          <input type="radio" name="inputNet" id="inputNet-2" value="2" {% if apprentice.dot_net=="2" %}checked="checked" {% endif %}> 2
+        </label> 
+        
+        <label class="radio-inline" for="inputNet-3">
+          <input type="radio" name="inputNet" id="inputNet-3" value="3" {% if apprentice.dot_net=="3" %}checked="checked" {% endif %}> 3
+        </label>
+      
+      </div>
     
-    <label class="radio-inline" for="inputUnixLinux-2">
-      <input type="radio" name="inputUnixLinux" id="inputUnixLinux-2" value="2"{% if apprentice.unix_linux=="2" %}checked="checked" {% endif %}> 2
-    </label> 
+    </div>
+
+  <!-- Objective-C Radios (inline) -->
+    <div class="form-group">
+      
+      <label class="col-md-5 control-label" for="inputObjectiveC">Objective-C</label>
+      
+      <div class="col-md-5"> 
+        
+        <label class="radio-inline" for="inputObjectiveC-0">
+          <input type="radio" name="inputObjectiveC" id="inputObjectiveC-0" value="0" {% if apprentice.objective_c=="0" %}checked="checked" {% endif %}> 0
+        </label> 
+        
+        <label class="radio-inline" for="inputObjectiveC-1">
+          <input type="radio" name="inputObjectiveC" id="inputObjectiveC-1" value="1" {% if apprentice.objective_c=="1" %}checked="checked" {% endif %}> 1
+        </label> 
+        
+        <label class="radio-inline" for="inputObjectiveC-2">
+          <input type="radio" name="inputObjectiveC" id="inputObjectiveC-2" value="2" {% if apprentice.objective_c=="2" %}checked="checked" {% endif %}> 2
+        </label> 
+        
+        <label class="radio-inline" for="inputObjectiveC-3">
+          <input type="radio" name="inputObjectiveC" id="inputObjectiveC-3" value="3" {% if apprentice.objective_c=="3" %}checked="checked" {% endif %}> 3
+        </label>
+      
+      </div>
     
-    <label class="radio-inline" for="inputUnixLinux-3">
-      <input type="radio" name="inputUnixLinux" id="inputUnixLinux-3" value="3"{% if apprentice.unix_linux=="3" %}checked="checked" {% endif %}> 3
-    </label>
-  
-  </div>
-</div>
+    </div>
 
-<!-- C++ Radios (inline) -->
-<div class="form-group">
-  <label class="col-md-5 control-label" for="inputCPlusPlus">C++</label>
-  <div class="col-md-5"> 
-    <label class="radio-inline" for="inputCPlusPlus-0">
-      <input type="radio" name="inputCPlusPlus" id="inputCPlusPlus-0" value="0"{% if apprentice.c_plusplus=="0" %}checked="checked" {% endif %}>
-      0
-    </label> 
-    <label class="radio-inline" for="inputCPlusPlus-1">
-      <input type="radio" name="inputCPlusPlus" id="inputCPlusPlus-1" value="1"{% if apprentice.c_plusplus=="1" %}checked="checked" {% endif %}>
-      1
-    </label> 
-    <label class="radio-inline" for="inputCPlusPlus-2">
-      <input type="radio" name="inputCPlusPlus" id="inputCPlusPlus-2" value="2"{% if apprentice.c_plusplus=="2" %}checked="checked" {% endif %}>
-      2
-    </label> 
-    <label class="radio-inline" for="inputCPlusPlus-3">
-      <input type="radio" name="inputCPlusPlus" id="inputCPlusPlus-3" value="3"{% if apprentice.c_plusplus=="3" %}checked="checked" {% endif %}>
-      3
-    </label>
-  </div>
-</div>
+  <!-- PHP Radios (inline) -->
+    <div class="form-group">
+      
+      <label class="col-md-5 control-label" for="inputPHP">PHP</label>
+      
+      <div class="col-md-5"> 
+       
+        <label class="radio-inline" for="inputPHP-0">
+          <input type="radio" name="inputPHP" id="inputPHP-0" value="0" {% if apprentice.php=="0" %}checked="checked" {% endif %}> 0
+        </label> 
+        
+        <label class="radio-inline" for="inputPHP-1">
+          <input type="radio" name="inputPHP" id="inputPHP-1" value="1" {% if apprentice.php=="1" %}checked="checked" {% endif %}> 1
+        </label> 
+        
+        <label class="radio-inline" for="inputPHP-2">
+          <input type="radio" name="inputPHP" id="inputPHP-2" value="2" {% if apprentice.php=="2" %}checked="checked" {% endif %}> 2
+        </label> 
+        
+        <label class="radio-inline" for="inputPHP-3">
+          <input type="radio" name="inputPHP" id="inputPHP-3" value="3" {% if apprentice.php=="3" %}checked="checked" {% endif %}> 3
+        </label>
+      
+      </div>
+    
+    </div>
 
-<!-- HTML/CSS Radios (inline) -->
-<div class="form-group">
-  <label class="col-md-5 control-label" for="inputHtmlCss">HTML/CSS</label>
-  <div class="col-md-5"> 
-    <label class="radio-inline" for="inputHtmlCss-0">
-      <input type="radio" name="inputHtmlCss" id="inputHtmlCss-0" value="0"{% if apprentice.html_css=="0" %}checked="checked" {% endif %}>
-      0
-    </label> 
-    <label class="radio-inline" for="inputHtmlCss-1">
-      <input type="radio" name="inputHtmlCss" id="inputHtmlCss-1" value="1"{% if apprentice.html_css=="1" %}checked="checked" {% endif %}>
-      1
-    </label> 
-    <label class="radio-inline" for="inputHtmlCss-2">
-      <input type="radio" name="inputHtmlCss" id="inputHtmlCss-2" value="2"{% if apprentice.html_css=="2" %}checked="checked" {% endif %}>
-      2
-    </label> 
-    <label class="radio-inline" for="inputHtmlCss-3">
-      <input type="radio" name="inputHtmlCss" id="inputHtmlCss-3" value="3"{% if apprentice.html_css=="3" %}checked="checked" {% endif %}>
-      3
-    </label>
-  </div>
-</div>
+  <!-- Python Radios (inline) -->
+    <div class="form-group">
+      
+      <label class="col-md-5 control-label" for="inputPython">Python</label>
+      
+      <div class="col-md-5"> 
+       
+        <label class="radio-inline" for="inputPython-0">
+          <input type="radio" name="inputPython" id="inputPython-0" value="0" {% if apprentice.python=="0" %}checked="checked" {% endif %}> 0
+        </label> 
+        
+        <label class="radio-inline" for="inputPython-1">
+          <input type="radio" name="inputPython" id="inputPython-1" value="1" {% if apprentice.python=="1" %}checked="checked" {% endif %}> 1
+        </label> 
+        
+        <label class="radio-inline" for="inputPython-2">
+          <input type="radio" name="inputPython" id="inputPython-2" value="2" {% if apprentice.python=="2" %}checked="checked" {% endif %}> 2
+        </label> 
+        
+        <label class="radio-inline" for="inputPython-3">
+          <input type="radio" name="inputPython" id="inputPython-3" value="3" {% if apprentice.python=="3" %}checked="checked" {% endif %}> 3
+        </label>
+      
+      </div>
+    
+    </div>
 
-<!-- Java Radios (inline) -->
-<div class="form-group">
-  <label class="col-md-5 control-label" for="inputJava">Java</label>
-  <div class="col-md-5"> 
-    <label class="radio-inline" for="inputJava-0">
-      <input type="radio" name="inputJava" id="inputJava-0" value="0"{% if apprentice.java=="0" %}checked="checked" {% endif %}>
-      0
-    </label> 
-    <label class="radio-inline" for="inputJava-1">
-      <input type="radio" name="inputJava" id="inputJava-1" value="1"{% if apprentice.java=="1" %}checked="checked" {% endif %}>
-      1
-    </label> 
-    <label class="radio-inline" for="inputJava-2">
-      <input type="radio" name="inputJava" id="inputJava-2" value="2"{% if apprentice.java=="2" %}checked="checked" {% endif %}>
-      2
-    </label> 
-    <label class="radio-inline" for="inputJava-3">
-      <input type="radio" name="inputJava" id="inputJava-3" value="3"{% if apprentice.java=="3" %}checked="checked" {% endif %}>
-      3
-    </label>
-  </div>
-</div>
+  <!-- Ruby/Rails Radios (inline) -->
+    <div class="form-group">
+      
+      <label class="col-md-5 control-label" for="inputRuby">Ruby/Rails</label>
+      
+      <div class="col-md-5"> 
+        
+        <label class="radio-inline" for="inputRuby-0">
+          <input type="radio" name="inputRuby" id="inputRuby-0" value="0" {% if apprentice.ruby_rails=="0" %}checked="checked" {% endif %}> 0
+        </label> 
+        
+        <label class="radio-inline" for="inputRuby-1">
+          <input type="radio" name="inputRuby" id="inputRuby-1" value="1" {% if apprentice.ruby_rails=="1" %}checked="checked" {% endif %}> 1
+        </label> 
+        
+        <label class="radio-inline" for="inputRuby-2">
+          <input type="radio" name="inputRuby" id="inputRuby-2" value="2" {% if apprentice.ruby_rails=="2" %}checked="checked" {% endif %}> 2
+        </label> 
+        
+        <label class="radio-inline" for="inputRuby-3">
+          <input type="radio" name="inputRuby" id="inputRuby-3" value="3" {% if apprentice.ruby_rails=="3" %}checked="checked" {% endif %}> 3
+        </label>
+      
+      </div>
+   
+    </div>
 
-<!-- Javascript Radios (inline) -->
-<div class="form-group">
-  <label class="col-md-5 control-label" for="inputJavascript">Javascript</label>
-  <div class="col-md-5"> 
-    <label class="radio-inline" for="inputJavascript-0">
-      <input type="radio" name="inputJavascript" id="inputJavascript-0" value="0" {% if apprentice.javascript=="0" %}checked="checked" {% endif %}>
-      0
-    </label> 
-    <label class="radio-inline" for="inputJavascript-1">
-      <input type="radio" name="inputJavascript" id="inputJavascript-1" value="1" {% if apprentice.javascript=="1" %}checked="checked" {% endif %}>
-      1
-    </label> 
-    <label class="radio-inline" for="inputJavascript-2">
-      <input type="radio" name="inputJavascript" id="inputJavascript-2" value="2" {% if apprentice.javascript=="2" %}checked="checked" {% endif %}>
-      2
-    </label>
-   <label class="radio-inline" for="inputJavascript-3">
-      <input type="radio" name="inputJavascript" id="inputJavascript-3" value="3" {% if apprentice.javascript=="3" %}checked="checked" {% endif %}>
-      3
-    </label>
-  </div>
-</div>
+  <!-- SQL Radios (inline) -->
+    <div class="form-group">
+      
+      <label class="col-md-5 control-label" for="inputSql">SQL</label>
+      
+      <div class="col-md-5"> 
+        
+        <label class="radio-inline" for="inputSql-0">
+          <input type="radio" name="inputSql" id="inputSql-0" value="0" {% if apprentice.sql=="0" %}checked="checked" {% endif %}> 0
+        </label> 
+        
+        <label class="radio-inline" for="inputSql-1">
+          <input type="radio" name="inputSql" id="inputSql-1" value="1" {% if apprentice.sql=="1" %}checked="checked" {% endif %}> 1
+        </label> 
+        
+        <label class="radio-inline" for="inputSql-2">
+          <input type="radio" name="inputSql" id="inputSql-2" value="2" {% if apprentice.sql=="2" %}checked="checked" {% endif %}> 2
+        </label> 
+        
+        <label class="radio-inline" for="inputSql-3">
+          <input type="radio" name="inputSql" id="inputSql-3" value="3" {% if apprentice.sql=="3" %}checked="checked" {% endif %}> 3
+        </label>
+      
+      </div>
+    
+    </div>
 
-<!-- .Net/C# Radios (inline) -->
-<div class="form-group">
-  <label class="col-md-5 control-label" for="inputNet">.Net/C#</label>
-  <div class="col-md-5"> 
-    <label class="radio-inline" for="inputNet-0">
-      <input type="radio" name="inputNet" id="inputNet-0" value="0" {% if apprentice.dot_net=="0" %}checked="checked" {% endif %}>
-      0
-    </label> 
-    <label class="radio-inline" for="inputNet-1">
-      <input type="radio" name="inputNet" id="inputNet-1" value="1" {% if apprentice.dot_net=="1" %}checked="checked" {% endif %}>
-      1
-    </label> 
-    <label class="radio-inline" for="inputNet-2">
-      <input type="radio" name="inputNet" id="inputNet-2" value="2" {% if apprentice.dot_net=="2" %}checked="checked" {% endif %}>
-      2
-    </label> 
-    <label class="radio-inline" for="inputNet-3">
-      <input type="radio" name="inputNet" id="inputNet-3" value="3" {% if apprentice.dot_net=="3" %}checked="checked" {% endif %}>
-      3
-    </label>
-  </div>
-</div>
+  <!-- Drupal Radios (inline) -->
+    <div class="form-group">
+      
+      <label class="col-md-5 control-label" for="inputDrupal">Drupal</label>
+      
+      <div class="col-md-5"> 
+        
+        <label class="radio-inline" for="inputDrupal-0">
+          <input type="radio" name="inputDrupal" id="inputDrupal-0" value="0" {% if apprentice.drupal=="0" %}checked="checked" {% endif %}> 0
+        </label> 
+        
+        <label class="radio-inline" for="inputDrupal-1">
+          <input type="radio" name="inputDrupal" id="inputDrupal-1" value="1" {% if apprentice.drupal=="1" %}checked="checked" {% endif %}> 1
+        </label> 
+        
+        <label class="radio-inline" for="inputDrupal-2">
+          <input type="radio" name="inputDrupal" id="inputDrupal-2" value="2" {% if apprentice.drupal=="2" %}checked="checked" {% endif %}> 2
+        </label> 
+        
+        <label class="radio-inline" for="inputDrupal-3">
+          <input type="radio" name="inputDrupal" id="inputDrupal-3" value="3" {% if apprentice.drupal=="3" %}checked="checked" {% endif %}> 3
+        </label>
+      
+      </div>
+    
+    </div>
 
-<!-- Objective-C Radios (inline) -->
-<div class="form-group">
-  <label class="col-md-5 control-label" for="inputObjectiveC">Objective-C</label>
-  <div class="col-md-5"> 
-    <label class="radio-inline" for="inputObjectiveC-0">
-      <input type="radio" name="inputObjectiveC" id="inputObjectiveC-0" value="0" {% if apprentice.objective_c=="0" %}checked="checked" {% endif %}>
-      0
-    </label> 
-    <label class="radio-inline" for="inputObjectiveC-1">
-      <input type="radio" name="inputObjectiveC" id="inputObjectiveC-1" value="1" {% if apprentice.objective_c=="1" %}checked="checked" {% endif %}>
-      1
-    </label> 
-    <label class="radio-inline" for="inputObjectiveC-2">
-      <input type="radio" name="inputObjectiveC" id="inputObjectiveC-2" value="2" {% if apprentice.objective_c=="2" %}checked="checked" {% endif %}>
-      2
-    </label> 
-    <label class="radio-inline" for="inputObjectiveC-3">
-      <input type="radio" name="inputObjectiveC" id="inputObjectiveC-3" value="3" {% if apprentice.objective_c=="3" %}checked="checked" {% endif %}>
-      3
-    </label>
-  </div>
-</div>
+  <!-- WordPress Radios (inline) -->
+    <div class="form-group">
+      
+      <label class="col-md-5 control-label" for="inputWordpress">WordPress</label>
+      
+      <div class="col-md-5"> 
+        
+        <label class="radio-inline" for="inputWordpress-0">
+          <input type="radio" name="inputWordpress" id="inputWordpress-0" value="0" {% if apprentice.wordpress=="0" %}checked="checked" {% endif %}> 0
+        </label> 
+        
+        <label class="radio-inline" for="inputWordpress-1">
+          <input type="radio" name="inputWordpress" id="inputWordpress-1" value="1" {% if apprentice.wordpress=="1" %}checked="checked" {% endif %}> 1
+        </label> 
+        
+        <label class="radio-inline" for="inputWordpress-2">
+          <input type="radio" name="inputWordpress" id="inputWordpress-2" value="2" {% if apprentice.wordpress=="2" %}checked="checked" {% endif %}> 2
+        </label> 
+        
+        <label class="radio-inline" for="inputWordpress-3">
+          <input type="radio" name="inputWordpress" id="inputWordpress-3" value="3" {% if apprentice.wordpress=="3" %}checked="checked" {% endif %}> 3
+        </label>
+      
+      </div>
+    
+    </div>
 
-<!-- PHP Radios (inline) -->
-<div class="form-group">
-  <label class="col-md-5 control-label" for="inputPHP">PHP</label>
-  <div class="col-md-5"> 
-    <label class="radio-inline" for="inputPHP-0">
-      <input type="radio" name="inputPHP" id="inputPHP-0" value="0" {% if apprentice.php=="0" %}checked="checked" {% endif %}>
-      0
-    </label> 
-    <label class="radio-inline" for="inputPHP-1">
-      <input type="radio" name="inputPHP" id="inputPHP-1" value="1" {% if apprentice.php=="1" %}checked="checked" {% endif %}>
-      1
-    </label> 
-    <label class="radio-inline" for="inputPHP-2">
-      <input type="radio" name="inputPHP" id="inputPHP-2" value="2" {% if apprentice.php=="2" %}checked="checked" {% endif %}>
-      2
-    </label> 
-    <label class="radio-inline" for="inputPHP-3">
-      <input type="radio" name="inputPHP" id="inputPHP-3" value="3" {% if apprentice.php=="3" %}checked="checked" {% endif %}>
-      3
-    </label>
-  </div>
-</div>
+  <!-- Git Radios (inline) -->
+    <div class="form-group">
+      
+      <label class="col-md-5 control-label" for="inputGit">Git/GitHub</label>
+      
+      <div class="col-md-5"> 
+        
+        <label class="radio-inline" for="inputGit-0">
+          <input type="radio" name="inputGit" id="inputGit-0" value="0" {% if apprentice.git=="0" %}checked="checked" {% endif %}> 0
+        </label> 
+        
+        <label class="radio-inline" for="inputGit-1">
+          <input type="radio" name="inputGit" id="inputGit-1" value="1" {% if apprentice.git=="1" %}checked="checked" {% endif %}> 1
+        </label> 
+        
+        <label class="radio-inline" for="inputGit-2">
+          <input type="radio" name="inputGit" id="inputGit-2" value="2" {% if apprentice.git=="2" %}checked="checked" {% endif %}> 2
+        </label> 
+        
+        <label class="radio-inline" for="inputGit-3">
+          <input type="radio" name="inputGit" id="inputGit-3" value="3" {% if apprentice.git=="3" %}checked="checked" {% endif %}> 3
+        </label>
+      
+      </div>
+   
+    </div>
 
-<!-- Python Radios (inline) -->
-<div class="form-group">
-  <label class="col-md-5 control-label" for="inputPython">Python</label>
-  <div class="col-md-5"> 
-    <label class="radio-inline" for="inputPython-0">
-      <input type="radio" name="inputPython" id="inputPython-0" value="0" {% if apprentice.python=="0" %}checked="checked" {% endif %}>
-      0
-    </label> 
-    <label class="radio-inline" for="inputPython-1">
-      <input type="radio" name="inputPython" id="inputPython-1" value="1" {% if apprentice.python=="1" %}checked="checked" {% endif %}>
-      1
-    </label> 
-    <label class="radio-inline" for="inputPython-2">
-      <input type="radio" name="inputPython" id="inputPython-2" value="2" {% if apprentice.python=="2" %}checked="checked" {% endif %}>
-      2
-    </label> 
-    <label class="radio-inline" for="inputPython-3">
-      <input type="radio" name="inputPython" id="inputPython-3" value="3" {% if apprentice.python=="3" %}checked="checked" {% endif %}>
-      3
-    </label>
-  </div>
-</div>
-
-<!-- Ruby/Rails Radios (inline) -->
-<div class="form-group">
-  <label class="col-md-5 control-label" for="inputRuby">Ruby/Rails</label>
-  <div class="col-md-5"> 
-    <label class="radio-inline" for="inputRuby-0">
-      <input type="radio" name="inputRuby" id="inputRuby-0" value="0" {% if apprentice.ruby_rails=="0" %}checked="checked" {% endif %}>
-      0
-    </label> 
-    <label class="radio-inline" for="inputRuby-1">
-      <input type="radio" name="inputRuby" id="inputRuby-1" value="1" {% if apprentice.ruby_rails=="1" %}checked="checked" {% endif %}>
-      1
-    </label> 
-    <label class="radio-inline" for="inputRuby-2">
-      <input type="radio" name="inputRuby" id="inputRuby-2" value="2" {% if apprentice.ruby_rails=="2" %}checked="checked" {% endif %}>
-      2
-    </label> 
-    <label class="radio-inline" for="inputRuby-3">
-      <input type="radio" name="inputRuby" id="inputRuby-3" value="3" {% if apprentice.ruby_rails=="3" %}checked="checked" {% endif %}>
-      3
-    </label>
-  </div>
-</div>
-
-<!-- SQL Radios (inline) -->
-<div class="form-group">
-  <label class="col-md-5 control-label" for="inputSql">SQL</label>
-  <div class="col-md-5"> 
-    <label class="radio-inline" for="inputSql-0">
-      <input type="radio" name="inputSql" id="inputSql-0" value="0" {% if apprentice.sql=="0" %}checked="checked" {% endif %}>
-      0
-    </label> 
-    <label class="radio-inline" for="inputSql-1">
-      <input type="radio" name="inputSql" id="inputSql-1" value="1" {% if apprentice.sql=="1" %}checked="checked" {% endif %}>
-      1
-    </label> 
-    <label class="radio-inline" for="inputSql-2">
-      <input type="radio" name="inputSql" id="inputSql-2" value="2" {% if apprentice.sql=="2" %}checked="checked" {% endif %}>
-      2
-    </label> 
-    <label class="radio-inline" for="inputSql-3">
-      <input type="radio" name="inputSql" id="inputSql-3" value="3" {% if apprentice.sql=="3" %}checked="checked" {% endif %}>
-      3
-    </label>
-  </div>
-</div>
-
-<!-- Drupal Radios (inline) -->
-<div class="form-group">
-  <label class="col-md-5 control-label" for="inputDrupal">Drupal</label>
-  <div class="col-md-5"> 
-    <label class="radio-inline" for="inputDrupal-0">
-      <input type="radio" name="inputDrupal" id="inputDrupal-0" value="0" {% if apprentice.drupal=="0" %}checked="checked" {% endif %}>
-      0
-    </label> 
-    <label class="radio-inline" for="inputDrupal-1">
-      <input type="radio" name="inputDrupal" id="inputDrupal-1" value="1" {% if apprentice.drupal=="1" %}checked="checked" {% endif %}>
-      1
-    </label> 
-    <label class="radio-inline" for="inputDrupal-2">
-      <input type="radio" name="inputDrupal" id="inputDrupal-2" value="2" {% if apprentice.drupal=="2" %}checked="checked" {% endif %}>
-      2
-    </label> 
-    <label class="radio-inline" for="inputDrupal-3">
-      <input type="radio" name="inputDrupal" id="inputDrupal-3" value="3" {% if apprentice.drupal=="3" %}checked="checked" {% endif %}>
-      3
-    </label>
-  </div>
-</div>
-
-<!-- WordPress Radios (inline) -->
-<div class="form-group">
-  <label class="col-md-5 control-label" for="inputWordpress">WordPress</label>
-  <div class="col-md-5"> 
-    <label class="radio-inline" for="inputWordpress-0">
-      <input type="radio" name="inputWordpress" id="inputWordpress-0" value="0" {% if apprentice.wordpress=="0" %}checked="checked" {% endif %}> 0
-    </label> 
-    <label class="radio-inline" for="inputWordpress-1">
-      <input type="radio" name="inputWordpress" id="inputWordpress-1" value="1" {% if apprentice.wordpress=="1" %}checked="checked" {% endif %}> 1
-    </label> 
-    <label class="radio-inline" for="inputWordpress-2">
-      <input type="radio" name="inputWordpress" id="inputWordpress-2" value="2" {% if apprentice.wordpress=="2" %}checked="checked" {% endif %}> 2
-    </label> 
-    <label class="radio-inline" for="inputWordpress-3">
-      <input type="radio" name="inputWordpress" id="inputWordpress-3" value="3" {% if apprentice.wordpress=="3" %}checked="checked" {% endif %}> 3
-    </label>
-  </div>
-</div>
-
-<!-- Git Radios (inline) -->
-<div class="form-group">
-  <label class="col-md-5 control-label" for="inputGit">Git/GitHub</label>
-  
-  <div class="col-md-5"> 
-    <label class="radio-inline" for="inputGit-0">
-      <input type="radio" name="inputGit" id="inputGit-0" value="0" {% if apprentice.git=="0" %}checked="checked" {% endif %}> 0
-    </label> 
-    <label class="radio-inline" for="inputGit-1">
-      <input type="radio" name="inputGit" id="inputGit-1" value="1" {% if apprentice.git=="1" %}checked="checked" {% endif %}> 1
-    </label> 
-    <label class="radio-inline" for="inputGit-2">
-      <input type="radio" name="inputGit" id="inputGit-2" value="2" {% if apprentice.git=="2" %}checked="checked" {% endif %}> 2
-    </label> 
-    <label class="radio-inline" for="inputGit-3">
-      <input type="radio" name="inputGit" id="inputGit-3" value="3" {% if apprentice.git=="3" %}checked="checked" {% endif %}> 3
-    </label>
-  
-  </div>
-</div>
-
-<!-- SVN Radios (inline) -->
-  <div class="form-group">
-    <label class="col-md-5 control-label" for="inputSVN">SVN</label>
+  <!-- SVN Radios (inline) -->
+    <div class="form-group">
+      
+      <label class="col-md-5 control-label" for="inputSVN">SVN</label>
+        
       <div class="col-md-5 bottomMargin"> 
+          
         <label class="radio-inline" for="inputSVN-0">
           <input type="radio" name="inputSVN" id="inputSVN-0" value="0" {% if apprentice.svn=="0" %}checked="checked" {% endif %}> 0
         </label> 
+          
         <label class="radio-inline" for="inputSVN-1">
           <input type="radio" name="inputSVN" id="inputSVN-1" value="1" {% if apprentice.svn=="1" %}checked="checked" {% endif %}> 1
         </label>
+          
         <label class="radio-inline" for="inputSVN-2">
           <input type="radio" name="inputSVN" id="inptSVN-2" value="2" {% if apprentice.svn=="2" %}checked="checked" {% endif %}> 2
         </label> 
+          
         <label class="radio-inline" for="inputSVN-3">
           <input type="radio" name="inputSVN" id="inputSVN-3" value="3" {% if apprentice.svn=="3" %}checked="checked" {% endif %}> 3
         </label>
+       
       </div>
-  </div>
-
-<!-- Comments Textarea -->
-  <div class="form-group">
-    <label class="col-md-5 control-label" for="inputComments">Comments</label>
-    <div class="col-md-5 bottomMargin">                     
-      <textarea class="form-control" id="inputComments" name="inputComments" rows="5">{{apprentice.comments}}</textarea>
+    
     </div>
-  </div>
 
-<!-- Submit Button -->
-  <div class="form-group">
-    <label class="col-xs-5 control-label" for="submitButton"></label>
-    <div class="col-xs-2">
-      <button id="submitButton" name="submitButton" class="btn btn-sm btn-primary">Submit</button>
+  <!-- Comments Textarea -->
+    <div class="form-group">
+      
+      <label class="col-md-5 control-label" for="inputComments">Comments</label>
+      
+      <div class="col-md-5 bottomMargin">                     
+        <textarea class="form-control" id="inputComments" name="inputComments" rows="5">{{apprentice.comments}}</textarea>
+      </div>
+    
     </div>
-  </div>
+
+  <!-- Submit Button -->
+    <div class="form-group">
+      
+      <label class="col-xs-5 control-label" for="submitButton"></label>
+      
+      <div class="col-xs-2">
+        <button id="submitButton" name="submitButton" class="btn btn-sm btn-primary">Submit</button>
+      </div>
+    
+    </div>
 
   </fieldset>
 </form>
 
-  </div> <!-- end ROW -->
+</div>
+
 {% endblock %}
