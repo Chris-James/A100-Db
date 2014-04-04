@@ -162,7 +162,10 @@
 			# B.4 Edit Apprentice Record
 				function editApprentice() {
 					if ($_POST['updateDelete'] == 'update') {
-						$apprentice = Apprentice::find_by_name($_POST['inputName']);
+						
+						# params(0) represents the apprentice name passed via the URL
+						$apprentice = Apprentice::find_by_name(params(0));
+						
 						$apprentice->update_attributes(array('name'			  => $_POST['inputName'],
 															 'cohort'		  => $_POST['inputCohort'],
 															 'address'		  => $_POST['inputAddress'],
@@ -192,8 +195,7 @@
 															 'email'		  => $_POST['inputEmail'])
 						);
 					} else if ($_POST['updateDelete'] == 'delete') {
-						//echo "We will delete now.";
-						$apprentice = Apprentice::find_by_name($_POST['inputName']);
+						$apprentice = Apprentice::find_by_name(params(0));
 						$apprentice->delete();
 					}
 
@@ -248,7 +250,10 @@
 			# C.4 Edit Company Record
 				function editCompany() {
 					if ($_POST['updateDelete'] == 'update') {
+
+						# params(0) represents the apprentice name passed in via the URL
 						$company = Partner::find_by_name(params(0));
+						
 						$company->update_attributes(array('name'		  => $_POST['inputName'],
 													 	  'city'		  => $_POST['inputCity'],
 														  'unix_linux'	  => $_POST['inputUnixLinux'],
@@ -269,7 +274,7 @@
 														  'comments'	  => $_POST['inputComments'])
 						);
 					} else if ($_POST['updateDelete'] == 'delete') {
-						$company = Partner::find_by_name($_POST['inputName']);
+						$company = Partner::find_by_name(params(0));
 						$company->delete();
 					}
 
